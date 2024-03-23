@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/header.ejs') %>
+<body>
+    <div class="signupContainer">
+        <div class="top">
+            <div class="left">
+                <img src="/HomepageImages/NEVOLINE_LOGO.png" alt="NEVOLINE">
+                <h2>NEVOLINE AGROVET</h2>
+            </div>
+            <div class="right">
+                <a href="/">HOME</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="left">
+                <img src="/HomepageImages/pexels-alexas-fotos-2255459.jpg" alt="">
+            </div>
+            <div class="right">
+                <form action="/signup" method="post">
+                    <h3>REGISTRATION FORM</h3>
+                        <% if(errorMessage){ %>
+                            <p id="errorMessage"><%=errorMessage%></p>
+                        <% } %>
+                    <div>
+                        <label for="username">
+                            USERNAME: <br>
+                            <input type="text" name="username" placeholder="Username"> <br>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="phoneNumber">
+                            PHONE NUMBER: <br>
+                            <input type="text" name="phoneNumber" placeholder="phone number"> <br>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email">
+                            EMAIL ADDRESS: <br>
+                            <input type="text" name="email" placeholder="email address"> <br>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="password">
+                            PASSWORD: <br>
+                            <input type="password" name="password" placeholder="password"> <br>
+                        </label>
+                    </div>
+                    <button type="submit">SIGN UP</button>
+                    <p id="account">Already have an account?<a href="">Log in</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Vanilla.js"></script>
+</body>
+</html>
