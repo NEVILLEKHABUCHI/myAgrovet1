@@ -476,7 +476,7 @@ body {
     }
     .signupContainer .body .left{
         width: inherit;
-        height: 40vh;
+        height: 35vh;
     }
     .signupContainer .body .left img{
         width: inherit;
@@ -485,11 +485,11 @@ body {
     }
     .signupContainer .body .right{ 
         width: inherit;
-        height: 44vh;
+        height: 49vh;
     }
     .signupContainer .body .right form{
         width: 70vw;
-        height: 36vh;
+        height: 40vh;
     }
     /*Media querrying the log in page*/
     .loginContainer {
@@ -519,7 +519,7 @@ body {
     }
     .loginContainer .body .left{
         width: inherit;
-        height: 40vh;
+        height: 35vh;
     }
     .loginContainer .body .left img{
         width: inherit;
@@ -528,7 +528,7 @@ body {
     }
     .loginContainer .body .right{ 
         width: inherit;
-        height: 44vh;
+        height: 49vh;
     }
     .loginContainer .body .right form{
         width: 70vw;
