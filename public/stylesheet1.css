@@ -421,7 +421,7 @@ body {
     }
     .container .body .right .content {
         width: fit-content;
-        height: 20vh;
+        height: 21vh;
         display: flex;
         flex-direction: column;
         padding: 5px;
@@ -533,5 +533,9 @@ body {
     .loginContainer .body .right form{
         width: 70vw;
         height: 30vh;
+    }
+    .loginContainer .body .right form div{
+        display: flex;
+        justify-content: space-between;
     }
 }
