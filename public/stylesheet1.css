@@ -486,6 +486,9 @@ body {
     .signupContainer .body .right{ 
         width: inherit;
         height: 49vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .signupContainer .body .right form{
         width: 70vw;
@@ -529,12 +532,16 @@ body {
     .loginContainer .body .right{ 
         width: inherit;
         height: 49vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .loginContainer .body .right form{
         width: 70vw;
         height: 30vh;
     }
     .loginContainer .body .right form div{
+        font-size: 0.8rem;
         width: inherit;
         display: flex;
         justify-content: space-between;
