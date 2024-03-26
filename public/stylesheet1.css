@@ -77,6 +77,7 @@ body {
     border-radius: 8px;
     padding: 2px;
     background-color: #E5E4E2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .container .body .right div {
     display: flex;
@@ -427,14 +428,16 @@ body {
     .container .body .right{ 
         width: inherit;
         height: 44vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .container .body .right .content {
         width: fit-content;
-        height: 21vh;
+        height: 25vh;
         display: flex;
         flex-direction: column;
         padding: 5px;
-        font-size: 1.2rem;
         margin-bottom: 80px;
     }
     .container .body .right .contactInfo {
@@ -494,7 +497,7 @@ body {
     }
     .signupContainer .body .right{ 
         width: inherit;
-        height: 49vh;
+        height: 45vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -502,6 +505,7 @@ body {
     .signupContainer .body .right form{
         width: 70vw;
         height: 40vh;
+        margin-bottom: 4vh;
     }
     /*Media querrying the log in page*/
     .loginContainer .top {
