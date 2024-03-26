@@ -221,12 +221,17 @@ body {
     background-color: #E5E4E2;
     border-radius: 8px;
 }
-.signupContainer .body .right form #errorMessage{
+.signupContainer .body .right form .errorMessage{
     height: 15px;
-    color: red;
-    font-size: 0.7rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.signupContainer .body .right form #errorMessage{
+    height: 12px;
+    width: inherit;
+    color: red;
+    font-size: 0.7rem;
     animation: fadeOut 5s forwards;
     overflow: hidden;
 }
@@ -361,6 +366,10 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.loginContainer .body .right form div input{
+    position: relative;
+    top: 4px;
+}
 .loginContainer .body .right form button{
     margin: 5px 75px;
     width: 80px;
@@ -492,12 +501,9 @@ body {
     }
     .signupContainer .body .right form{
         width: 70vw;
-        height: 35vh;
+        height: 40vh;
     }
     /*Media querrying the log in page*/
-    .loginContainer {
-        overflow-y: scroll;
-    }
     .loginContainer .top {
         display: flex;
         flex-direction: column;
@@ -542,7 +548,7 @@ body {
     }
     .loginContainer .body .right form div{
         font-size: 0.8rem;
-        width: inherit;
+        width: 65vw;
         display: flex;
         justify-content: space-between;
     }

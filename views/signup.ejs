@@ -19,9 +19,11 @@
             <div class="right">
                 <form action="/signup" method="post">
                     <h3>REGISTRATION FORM</h3>
-                        <% if(errorMessage){ %>
-                            <p id="errorMessage"><%=errorMessage%></p>
-                        <% } %>
+                        <div class="errorMessage">
+                            <% if(errorMessage){ %>
+                                <p id="errorMessage"><%=errorMessage%></p>
+                            <% } %>
+                        </div>
                     <div>
                         <label for="username">
                             USERNAME: <br>
