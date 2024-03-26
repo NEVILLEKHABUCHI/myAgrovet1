@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/header.ejs') %>
+<body>
+    <div class="loginContainer">
+        <div class="top">
+            <div class="left">
+                <img src="/HomepageImages/NEVOLINE_LOGO.png" alt="NEVOLINE">
+                <h2>NEVOLINE AGROVET</h2>
+            </div>
+            <div class="right">
+                <a href="/">HOME</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="left">
+                <img src="/HomepageImages/cow.jpg" alt="WELCOME TO NEVOLINE AGROVET" loading="lazy">
+            </div>
+            <div class="right">
+                <form action="">
+                    <h3>LOG IN FORM</h3>
+                    <label for="username">
+                        USERNAME: <br>
+                        <input type="text" name="username" placeholder="Username" id="main"> <br>
+                    </label>
+                    <label for="password">
+                        PASSWORD: <br>
+                        <input type="password" name="password" placeholder="Password" id="main"> <br>
+                    </label>
+                    <div id="rem">
+                            <label for="rememberMe">
+                                <input type="checkbox">
+                                RememberMe?
+                            </label>
+                        <p><a href="">Forgot Password?</a></p>
+                    </div>
+                    <button type="submit">LOG IN</button>
+                    <p id="account">Don't have an account?<a href="/signup">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
