@@ -405,7 +405,7 @@ body {
     }
     .container .body .left{
         width: inherit;
-        height: 60vh;
+        height: 50vh;
     }
     .container .body .left img{
         width: inherit;
@@ -414,7 +414,7 @@ body {
     }
     .container .body .right{ 
         width: inherit;
-        height: 39vh;
+        height: 49vh;
     }
     .container .body .right .content {
         width: fit-content;
@@ -485,7 +485,7 @@ body {
         height: 49vh;
     }
     .signupContainer .body .right form{
-        width: 60vw;
+        width: 70vw;
         height: 30vh;
     }
     /*Media querrying the log in page*/
@@ -525,7 +525,7 @@ body {
         height: 49vh;
     }
     .loginContainer .body .right form{
-        width: 60vw;
+        width: 70vw;
         height: 30vh;
     }
 }
