@@ -408,7 +408,7 @@ body {
     }
     .container .body .left{
         width: inherit;
-        height: 50vh;
+        height: 40vh;
     }
     .container .body .left img{
         width: inherit;
@@ -417,7 +417,7 @@ body {
     }
     .container .body .right{ 
         width: inherit;
-        height: 49vh;
+        height: 44vh;
     }
     .container .body .right .content {
         width: fit-content;
@@ -452,9 +452,6 @@ body {
         margin: 8px 0;
     }
     /*Media-querying the signup/login page*/
-    .signupContainer {
-        overflow-y: scroll;
-    }
     .signupContainer .top {
         display: flex;
         flex-direction: column;
@@ -479,7 +476,7 @@ body {
     }
     .signupContainer .body .left{
         width: inherit;
-        height: 50vh;
+        height: 40vh;
     }
     .signupContainer .body .left img{
         width: inherit;
@@ -488,11 +485,11 @@ body {
     }
     .signupContainer .body .right{ 
         width: inherit;
-        height: 49vh;
+        height: 44vh;
     }
     .signupContainer .body .right form{
         width: 70vw;
-        height: 30vh;
+        height: 40vh;
     }
     /*Media querrying the log in page*/
     .loginContainer {
@@ -522,7 +519,7 @@ body {
     }
     .loginContainer .body .left{
         width: inherit;
-        height: 50vh;
+        height: 40vh;
     }
     .loginContainer .body .left img{
         width: inherit;
@@ -531,7 +528,7 @@ body {
     }
     .loginContainer .body .right{ 
         width: inherit;
-        height: 49vh;
+        height: 44vh;
     }
     .loginContainer .body .right form{
         width: 70vw;
