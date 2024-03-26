@@ -381,6 +381,9 @@ body {
 /*Media querrying*/
 @media only screen  and (max-width:1000px) {
     /*Media-querying the landing page*/
+    .container{
+        overflow-y: scroll;
+    }
     .container .top {
         display: flex;
         flex-direction: column;
@@ -449,6 +452,9 @@ body {
         margin: 8px 0;
     }
     /*Media-querying the signup/login page*/
+    .signupContainer {
+        overflow-y: scroll;
+    }
     .signupContainer .top {
         display: flex;
         flex-direction: column;
@@ -489,6 +495,9 @@ body {
         height: 30vh;
     }
     /*Media querrying the log in page*/
+    .loginContainer {
+        overflow-y: scroll;
+    }
     .loginContainer .top {
         display: flex;
         flex-direction: column;
