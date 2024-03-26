@@ -381,9 +381,6 @@ body {
 /*Media querrying*/
 @media only screen  and (max-width:1000px) {
     /*Media-querying the landing page*/
-    body {
-        overflow: hidden!important;
-    }
     .container .top {
         display: flex;
         flex-direction: column;
