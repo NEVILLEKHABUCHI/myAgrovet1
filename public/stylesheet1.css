@@ -489,7 +489,7 @@ body {
     }
     .signupContainer .body .right form{
         width: 70vw;
-        height: 40vh;
+        height: 35vh;
     }
     /*Media querrying the log in page*/
     .loginContainer {
@@ -535,6 +535,7 @@ body {
         height: 30vh;
     }
     .loginContainer .body .right form div{
+        width: inherit;
         display: flex;
         justify-content: space-between;
     }
