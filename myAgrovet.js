@@ -23,7 +23,8 @@ const db=mysql.createConnection({
 //Connect to MySQL
 db.connect((error)=>{
     if(error){
-        console.log('Error connecting to the database',error)
+        console.log('Error connecting to the database',error);
+        return;
     }else{
         console.log('Mysql connected successfully');
         app.listen(3000,()=>{
@@ -52,7 +53,11 @@ app.get('/signup',(req,res)=>{
 });
 //Rendering the login page
 app.get('/login',(req,res)=>{
-    res.render('login',{title:'Log in Page'});
+    res.render('login',{title:'Log in Page',errorMessage:null});
+})
+//Rendering the admin page
+app.get('/admin',(req,res)=>{
+    res.render('admin',{title:'Admin page'});
 })
 //Posting the signup page details
 app.post('/signup',(req,res)=>{
@@ -60,6 +65,7 @@ app.post('/signup',(req,res)=>{
     //Checking whether the input fields are filled
     if(!username||!phoneNumber||!email||!password || phoneNumber.length!=10){
         const errorMessage='Fill in your details correctly';
+        console.log(errorMessage);
         return res.render('signup',{title:'Sign up',errorMessage});
     }
     const query1=`SELECT * FROM signup WHERE PHONE_NUMBER=?`;
@@ -111,4 +117,37 @@ app.post('/signup',(req,res)=>{
             return res.render('signup',{title:'Sign up',errorMessage});
         }
     })
+})
+//Posting the log in page details
+app.post('/login',(req,res)=>{
+    const {username,password}=req.body;
+    //Making sure both the fields are filled
+    if(!username||!password){
+        const errorMessage='Kindly fill in your details';
+        return res.render('login',{title:'Log in Page', errorMessage});
+    }
+    if(username==='MOLLY'&&password==='NEVILLE'){
+        res.redirect('/admin');
+    }
+    else{
+        //Check if the provided credentials match any regular user
+        //Query to check whether the user details match with the registered details
+        const query=`SELECT * FROM signup WHERE USERNAME=? AND PASSWORD=?`;
+        db.query(query,[username,password],(error,result)=>{
+            if(error){
+                console.log('Cannot fetch details from the database',error);
+                return;
+            }
+            else{
+                if(result.length>0){
+                    const user=result[0];
+                    res.send('Log in successful');
+                }
+                else{
+                    const errorMessage="Invalid credentials";
+                    return res.render('login',{title:'Log in Page', errorMessage});
+                }
+            }
+        })
+    }
 })

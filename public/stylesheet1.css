@@ -344,7 +344,7 @@ body {
 }
 .loginContainer .body .right form{
     width: 20vw;
-    height: 33vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -386,6 +386,20 @@ body {
 }
 .loginContainer .body .right form a{
     color: #03C03C;
+}
+.loginContainer .body .right form .errorMessage{
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginContainer .body .right form #errorMessage{
+    height: 12px;
+    width: inherit;
+    color: red;
+    font-size: 0.7rem;
+    animation: fadeOut 5s forwards;
+    overflow: hidden;
 }
 
 /*Media querrying*/
@@ -541,14 +555,15 @@ body {
     }
     .loginContainer .body .right{ 
         width: inherit;
-        height: 49vh;
+        height: 47vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .loginContainer .body .right form{
         width: 70vw;
-        height: 30vh;
+        height: 33vh;
+        margin-bottom: 2vh;
     }
     .loginContainer .body .right form div{
         font-size: 0.8rem;

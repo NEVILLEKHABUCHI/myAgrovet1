@@ -17,8 +17,13 @@
                 <img src="/HomepageImages/cow.jpg" alt="WELCOME TO NEVOLINE AGROVET" loading="lazy">
             </div>
             <div class="right">
-                <form action="">
+                <form action="/login" method="post">
                     <h3>LOG IN FORM</h3>
+                    <div class="errorMessage">
+                        <% if(errorMessage){ %>
+                            <p id="errorMessage"><%=errorMessage%></p>
+                        <% } %>
+                    </div>
                     <label for="username">
                         USERNAME: <br>
                         <input type="text" name="username" placeholder="Username" id="main"> <br>
