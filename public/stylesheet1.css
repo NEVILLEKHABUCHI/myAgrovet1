@@ -450,7 +450,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: #F4F0EC;
+    background-color: gray;
 }
 .adminContainer .center .centerTop a{
     background-color: #03C03C;
@@ -694,7 +694,6 @@ body {
     .adminContainer{
         width: 100vw;
         height: max-content;
-        overflow-y: scroll;
     }
     .adminContainer .top {
         width: inherit;
@@ -783,6 +782,7 @@ body {
         align-items: center;
         gap: 2vw;
         padding: 2vh 0;
+        overflow-y: scroll;
     }
     .adminContainer .bottom .bottom1 {
         width: 90vw;
