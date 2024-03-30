@@ -1,8 +1,18 @@
-let closecontactInfo=document.querySelector('.contactInfo');
+let contactInfo=document.querySelector('.contactInfo');
+let adminTabs=document.querySelector('.centerTop');
 
+//Functions for the contact information on the landing page
 function showContactInfo(){
-    closecontactInfo.style.display="block";
+    contactInfo.style.display="block";
 }
 function closeContactInfo(){
-    closecontactInfo.style.display="none";
+    contactInfo.style.display="none";
 }
+//Functions for the adminTabs on the admin page
+function showAdminTabs(){
+    adminTabs.style.display="flex";
+}
+function closeAdminTabs(){
+    adminTabs.style.display="none";
+}
+
