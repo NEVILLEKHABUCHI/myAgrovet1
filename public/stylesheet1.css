@@ -698,7 +698,7 @@ body {
         height: max-content;
         overflow-y: scroll;
         overflow-x: hidden;
-        /* padding-bottom:20vh; */
+        padding-bottom:20vh;
     }
     .adminContainer .top {
         width: inherit;
