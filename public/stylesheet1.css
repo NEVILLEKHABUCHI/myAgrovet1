@@ -450,7 +450,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: black;
 }
 .adminContainer .center .centerTop a{
     background-color: #03C03C;
@@ -781,7 +780,8 @@ body {
         justify-content: center;
         align-items: center;
         gap: 2vw;
-        padding: 2vh 0;
+        padding-top: 2vh;
+        padding-bottom: 10vh;
         overflow-y: scroll;
     }
     .adminContainer .bottom .bottom1 {
