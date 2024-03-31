@@ -517,6 +517,9 @@ body {
 /*Media querrying*/
 @media only screen  and (max-width:1000px) {
     /*Media-querying the landing page*/
+    body {
+        overflow-y: scroll;
+    }
     .container{
         overflow-y: scroll;
     }
@@ -690,9 +693,12 @@ body {
         align-items: center;
     }
     /*Media querying the admin page*/
-    .adminContainer{
+     .adminContainer{
         width: 100vw;
         height: max-content;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /* padding-bottom:20vh; */
     }
     .adminContainer .top {
         width: inherit;
@@ -780,8 +786,7 @@ body {
         justify-content: center;
         align-items: center;
         gap: 2vw;
-        padding-top: 2vh;
-        padding-bottom: 10vh;
+        padding: 2vh 0;
         overflow-y: scroll;
     }
     .adminContainer .bottom .bottom1 {
@@ -793,5 +798,5 @@ body {
         width: 90vw;
         height: 30vh;
         border-radius: 10px;
-    }
+    } 
 }
