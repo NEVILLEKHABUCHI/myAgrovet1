@@ -439,7 +439,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: #03C03C;
+    background-color: #00563B;
 }
 .adminContainer .center .centerTop {
     width: 70vw;
@@ -450,12 +450,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    background-color: #f4f4f4;
 }
 .adminContainer .center .centerTop a{
-    background-color: #03C03C;
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
+    color: #00401A;
 }
 .adminContainer .center .centerTop button {
     display: none;
@@ -512,6 +510,101 @@ body {
     height: 45vh;
     border-radius: 10px;
     background-color: #E5E4E2;
+}
+/* Styling the adminFeedsContainer */
+.adminFeedsContainer {
+    width: 100vw;
+    height: 99vh;
+    overflow: hidden;
+}
+.adminFeedsContainer .top1 {
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: #E5E4E2;
+}
+.adminFeedsContainer .body {
+    background-color: #00563B;
+}
+.adminFeedsContainer .body .top {
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+    background-color: #F8F8FF;
+}
+.adminFeedsContainer .body .top .left {
+    width: 30vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.adminFeedsContainer .body .top .left button {
+    display: none;
+}
+.adminFeedsContainer .body .top .left div{
+    display: flex;
+}
+.adminFeedsContainer .body .top .left div p:first-of-type{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #03C03C;
+    color: white;
+}
+.adminFeedsContainer .body .top .left div p:nth-of-type(2){
+    display: flex;
+    align-items: center;
+}
+.adminFeedsContainer .body .top .right{
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.adminFeedsContainer .body .top .right p a{
+    text-decoration: none;
+    color: #00401A;
+}
+.adminFeedsContainer .body .top .right button {
+    display: none;
+}
+.adminFeedsContainer .body .center {
+    width: inherit;
+    height: 79vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminFeedsContainer .body .center .tableContent{
+    width: 70vw;
+    height: 70vh;
+    border-radius: 5px;
+    background-color:  #F2F3F4;
+}
+.adminFeedsContainer .body .center .tableContent div {
+    width: inherit;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    background-color: #03C03C;
+    border-radius: 5px;
+}
+.adminFeedsContainer .body .center .tableContent table{
+    width: 60vw;
+    border-collapse: collapse;
+    border: 1px solid #00401A;
+    margin: 2vh 5vw;
+}
+.adminFeedsContainer .body .center .tableContent table th{
+    border: 1px solid #00401A;
 }
 
 /*Media querrying*/
@@ -798,5 +891,99 @@ body {
         width: 90vw;
         height: 30vh;
         border-radius: 10px;
+    } 
+    /* Media querying the adminFeedsContainer */
+    .adminFeedsContainer{
+        width: 100vw;
+       height: 99vh;
+       overflow: hidden;
+    }
+    .adminFeedsContainer .top1{
+        width: inherit;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+    .adminFeedsContainer .body {
+        width: inherit;
+        height: 94vh;
+    }
+    .adminFeedsContainer .body .top{
+        width: inherit;
+        height: 5vh;
+        padding: 0;
+    }
+    .adminFeedsContainer .body .top .left{
+        width: inherit;
+        height: 5vh;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 35vw;
+    }
+    .adminFeedsContainer .body .top .left button {
+        display: block;
+    }
+    .adminFeedsContainer .body .top .left button i {
+        font-size: 1.5rem;
+    }
+    .adminFeedsContainer .body .top .left div{
+        display: flex;
+    }
+    .adminFeedsContainer .body .top .left div p:first-of-type{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .adminFeedsContainer .body .top .left div p:nth-of-type(2){
+        display: flex;
+        align-items: center;
+    }
+    .adminFeedsContainer .body .top .right{
+        width: 40vw;
+        height: 50vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2vh 0;
+        position: absolute;
+        top: 10vh;
+        display: none;
+    }
+    .adminFeedsContainer .body .top .right button {
+        display: block;
+        position: absolute;
+        top: 0.1vh;
+        left: 35vw;
+    }
+    .adminFeedsContainer .body .top .right button i {
+        font-size: 1.2rem;
+    }
+    .adminFeedsContainer .body .center {
+        width: 99vw;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+    }
+    .adminFeedsContainer .body .center .tableContent{
+        width: 90vw;
+        height: max-content;
+    }
+    .adminFeedsContainer .body .center .tableContent div {
+        width: inherit;
+        height: 5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .adminFeedsContainer .body .center .tableContent table{
+        width: inherit;
+        border-collapse: collapse;
+        /* margin: 2vh 5vw; */
     } 
 }

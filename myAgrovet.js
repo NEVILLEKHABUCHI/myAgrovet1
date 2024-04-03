@@ -58,6 +58,10 @@ app.get('/login',(req,res)=>{
 //Rendering the admin page
 app.get('/admin',(req,res)=>{
     res.render('admin',{title:'Admin page'});
+});
+//Rendering the adminFeeds page
+app.get('/adminFeeds',(req,res)=>{
+    res.render('adminFeeds',{title:'Admin Feeds'});
 })
 //Posting the signup page details
 app.post('/signup',(req,res)=>{

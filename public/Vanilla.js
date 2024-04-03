@@ -1,5 +1,6 @@
 let contactInfo=document.querySelector('.contactInfo');
 let adminTabs=document.querySelector('.centerTop');
+let adminFeeds=document.querySelector('#FeedsTabs');
 
 //Functions for the contact information on the landing page
 function showContactInfo(){
@@ -14,5 +15,12 @@ function showAdminTabs(){
 }
 function closeAdminTabs(){
     adminTabs.style.display="none";
+}
+//Functions for the adminFeeds tabs on the admin Feeds page 
+function showAdminFeeds(){
+    adminFeeds.style.display="flex";
+}
+function closeAdminFeeds(){
+    adminFeeds.style.display="none";
 }
 

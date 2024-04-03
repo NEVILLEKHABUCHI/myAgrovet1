@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/header.ejs') %>
+<body>
+    <div class="adminFeedsContainer">
+        <div class="top1">
+            NEVOLINE AGROVET
+        </div>
+        <div class="body">
+            <div class="top">
+                <div class="left">
+                    <button onclick="showAdminFeeds()"><i class="fa-solid fa-bars"></i></button>
+                   <div>
+                    <p><i class="fa-solid fa-cow"></i></p>
+                    <p>ANIMAL FEEDS</p>
+                   </div>
+                </div>
+                <div class="right" id="FeedsTabs">
+                    <button onclick="closeAdminFeeds()"><i class="fa-solid fa-x"></i></button>
+                    <p><a href="/admin">Dashboard</a></p>
+                    <p><a href="">Drugs</a></p>
+                    <p><a href="">Seeds</a></p>
+                    <p><a href="">Others</a></p>
+                    <p><a href="">Books</a></p>
+                    <p><a href="">Veterinary Doctors</a></p>
+                </div>
+            </div>
+            <div class="center">
+                <div class="tableContent">
+                    <div>
+                        <p>SEARCH <input type="text"></p>
+                        <button>ADD FEED</button>
+                    </div>
+                        <table>
+                            <tr id="heading">
+                               <th style="width: 25vw;">NAME</th>
+                               <th style="width: 10vw;">PRICE</th>
+                               <th style="width: 10vw;">QUANTITY</th>
+                               <th>ACTION</th>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="Vanilla.js"></script>
+</html>
