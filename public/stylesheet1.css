@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 * a {
     text-decoration: none;
@@ -587,7 +587,7 @@ body {
     border-radius: 5px;
     background-color:  #F2F3F4;
 }
-.adminFeedsContainer .body .center .tableContent div {
+.adminFeedsContainer .body .center .tableContent .tableContentTop {
     width: inherit;
     height: 5vh;
     display: flex;
@@ -597,15 +597,73 @@ body {
     background-color: #03C03C;
     border-radius: 5px;
 }
-.adminFeedsContainer .body .center .tableContent table{
-    width: 60vw;
+.adminFeedsContainer .body .center .tableContent .table{
+    width: 65vw;
+    border: 1px solid #00401A;
+    margin: 2vh 2.5vw;
+}
+.adminFeedsContainer .body .center .tableContent .table .header {
+    display: flex;
+    justify-content: space-between;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct{
+    width: 50vw;
+    height: 60vh;
+    position: absolute;
+    top: 32vh;
+    left: 30vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct #close{
+    position: relative;
+    bottom: 28vh;
+    right: 6.7vw;
+    font-size: 1.2rem;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct form {
+    width: 35vw;
+    height: 42vh;
+    background-color: #E5E4E2;
+    border-radius: 10px;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct form input{
+    width: 20vw;
+    height: 4vh;
+    margin-left: 2vw;
+    border-radius: 2px;
+    border: none;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct form div {
+    margin: 1vh 1vw;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct form .button{
+    display: flex;
+    justify-content: center;
+}
+.adminFeedsContainer .body .center .tableContent .table table{
+    width: inherit;
     border-collapse: collapse;
-    border: 1px solid #00401A;
-    margin: 2vh 5vw;
 }
-.adminFeedsContainer .body .center .tableContent table th{
-    border: 1px solid #00401A;
+.adminFeedsContainer .body .center .tableContent .table table th,td{
+    border: 1px solid;
+    text-align: center;
 }
+.adminFeedsContainer .body .center .tableContent .table td #icon{
+    display: none;
+}
+
+.adminFeedsContainer .body .center .tableContent .table table tr td img{
+    width: 50px;
+    height: 50px;
+}
+/* .adminFeedsContainer .body .center .tableContent .table table tr th:nth-of-type(2){
+    width: 30vw;
+} */
+
 
 /*Media querrying*/
 @media only screen  and (max-width:1000px) {
@@ -971,19 +1029,57 @@ body {
         justify-content: center;
     }
     .adminFeedsContainer .body .center .tableContent{
-        width: 90vw;
-        height: max-content;
+        width: 95vw;
+        height: 100vh;
     }
-    .adminFeedsContainer .body .center .tableContent div {
+    .adminFeedsContainer .body .center .tableContent .tableContentTop {
         width: inherit;
         height: 5vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .adminFeedsContainer .body .center .tableContent table{
+    .adminFeedsContainer .body .center .tableContent .table{
         width: inherit;
-        border-collapse: collapse;
-        /* margin: 2vh 5vw; */
+        margin: 0;
     } 
+    .adminFeedsContainer .body .center .tableContent .addProduct{
+        width: 80vw;
+        height: 60vh;
+        position: absolute;
+        top: 16vh;
+        left: 7vw;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .adminFeedsContainer .body .center .tableContent .addProduct #close{
+        position: relative;
+        bottom: 28vh;
+        right: 2vw;
+        font-size: 1.2rem;
+    }
+    .adminFeedsContainer .body .center .tableContent .addProduct form{
+        width: 70vw;
+        height: 40vh;
+    }
+    .adminFeedsContainer .body .center .tableContent .addProduct form input{
+        width: 60vw;
+    }
+    .adminFeedsContainer .body .center .tableContent .table table th,td{
+        text-align: left;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .adminFeedsContainer .body .center .tableContent .table td .buttons{
+        display: none;
+    }
+    .adminFeedsContainer .body .center .tableContent .table td #icon{
+        display: block;
+    }
+   
 }

@@ -27,18 +27,63 @@
             </div>
             <div class="center">
                 <div class="tableContent">
-                    <div>
+                    <div class="tableContentTop">
                         <p>SEARCH <input type="text"></p>
-                        <button>ADD FEED</button>
+                        <button onclick="addNewItem()">ADD FEED</button>
                     </div>
-                        <table>
-                            <tr id="heading">
-                               <th style="width: 25vw;">NAME</th>
-                               <th style="width: 10vw;">PRICE</th>
-                               <th style="width: 10vw;">QUANTITY</th>
-                               <th>ACTION</th>
+                        <div class="table">
+                           <table>
+                            <tr>
+                                <th>IMAGE</th>
+                                <th>NAME</th>
+                                <th>PRICE</th>
+                                <th>QUANTITY</th>
+                                <th>ACTION</th>
                             </tr>
-                        </table>
+                            <%Feeds.forEach((Feed)=>{ %>
+                                <tr>
+                                    <td><img src="data:image/png;base64,<%=Feed.productImage %>" alt="Animal feed"></td>
+                                    <td><%=Feed.productName %></td>
+                                    <td><%=Feed.productPrice %></td>
+                                    <td><%=Feed.productQuantity %></td>
+                                    <td>
+                                        <div class="buttons">
+                                            <button>EDIT</button>
+                                            <button>DELETE</button>
+                                            <button>FREEZE</button>
+                                        </div>
+                                        <button id="icon"><i class="fa-solid fa-ellipsis-vertical" style="color: red;"></i></button>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                           </table>
+                        </div>
+                        <div class="addProduct">
+                            <button id="close" onclick="closeNewItem()"><i class="fa-solid fa-x"></i></button>
+                            <form action="/addProduct" method="post" enctype="multipart/form-data">
+                                <h4>NEW ITEM</h4>
+                                <div>
+                                    <label for="product">PRODUCT IMAGE:</label><br>
+                                    <input type="file" name="productImage" accept="image/*" required>
+                                </div>
+                                <div>
+                                    <label for="productName">PRODUCT NAME:</label><br>
+                                    <input type="text" name="productName">
+                                </div>
+                                <div>
+                                    <label for="productPrice">PRODUCT PRICE:</label><br>
+                                    <input type="text" name="productPrice">
+                                </div>
+                                <div>
+                                    <label for="productQuantity">PRODUCT QUANTITY:</label><br>
+                                    <input type="text" name="productQuantity">
+                                    <input type="text" name="productCategory" value="FEEDS" hidden>
+                                </div>
+                                <div class="button">
+                                    <button type="submit">ADD PRODUCT</button>
+                                </div>
+                            </form>
+                        </div>
                 </div>
             </div>
         </div>

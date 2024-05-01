@@ -1,7 +1,11 @@
 const express=require('express');
 const mysql=require('mysql');
+const mongoose=require('mongoose');
 const dotenv=require('dotenv');
 const nodemailer=require('nodemailer');
+const bodyParser=require('body-parser');
+const multer=require('multer');
+const path=require('path');
 const session=require('express-session');
 
 dotenv.config({path:'./important.env'});
@@ -9,8 +13,10 @@ dotenv.config({path:'./important.env'});
 const app=express();
 app.set('view engine','ejs');
 app.use(express.static('public'));
+
 //Middleware for parsing URL-encoded form data
-app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 //Setting up MySQL connection
 const db=mysql.createConnection({
@@ -32,6 +38,15 @@ db.connect((error)=>{
         })
     }
 });
+//Connecting to MongoDB
+const dbUrl='mongodb+srv://Nevoline_agrovet:Khabuchi@cluster0.3wznhua.mongodb.net/Nevoline_Agrovet?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(dbUrl).then(()=>{
+    console.log('Connected to mongodb successfully');
+})
+//Multer configuration for handling file uploads
+const storage=multer.memoryStorage();
+const upload=multer({storage:storage});
 //Setting up Nodemailer transporter
 const transporter=nodemailer.createTransport({
     service:'gmail',
@@ -51,19 +66,7 @@ app.get('/',(req,res)=>{
 app.get('/signup',(req,res)=>{
     res.render('signup',{title:'Sign up',errorMessage:null});
 });
-//Rendering the login page
-app.get('/login',(req,res)=>{
-    res.render('login',{title:'Log in Page',errorMessage:null});
-})
-//Rendering the admin page
-app.get('/admin',(req,res)=>{
-    res.render('admin',{title:'Admin page'});
-});
-//Rendering the adminFeeds page
-app.get('/adminFeeds',(req,res)=>{
-    res.render('adminFeeds',{title:'Admin Feeds'});
-})
-//Posting the signup page details
+//Posting the signup page form details
 app.post('/signup',(req,res)=>{
     const{username,phoneNumber,email,password}=req.body;
     //Checking whether the input fields are filled
@@ -122,7 +125,11 @@ app.post('/signup',(req,res)=>{
         }
     })
 })
-//Posting the log in page details
+//Rendering the login page
+app.get('/login',(req,res)=>{
+    res.render('login',{title:'Log in Page',errorMessage:null});
+});
+//Posting the log in page form details
 app.post('/login',(req,res)=>{
     const {username,password}=req.body;
     //Making sure both the fields are filled
@@ -153,5 +160,63 @@ app.post('/login',(req,res)=>{
                 }
             }
         })
+    }
+})
+//Rendering the admin page
+app.get('/admin',(req,res)=>{
+    res.render('admin',{title:'Admin page'});
+});
+//Product schema for the products collection in mongoDB
+const productSchema=new mongoose.Schema({
+    productImage:String,
+    productName:String,
+    productPrice:Number,
+    productQuantity:Number,
+    productCategory:String//Store image data as Base64 string
+});
+const Product=mongoose.model('products',productSchema);
+
+//Function to get the products' details from mongoDB
+async function getProductDetails(){
+    try{
+        //Query the database to fetch product details
+        const product=await Product.find({},{productImage:1,productName:1,productPrice:1,productQuantity:1});
+        console.log(product);
+    }catch(error){
+        console.error('Error fwetching product details',error);
+    }
+}
+//Rendering the adminFeeds page which entails getting items from mongodb database
+app.get('/adminFeeds',async(req,res)=>{
+    try{
+        //Query the database to fetch product details
+        const products=await Product.find({},{productImage:1,productName:1,productPrice:1,productQuantity:1});
+        res.render('adminFeeds',{title:'Admin Feeds',Feeds:products});
+    }
+    catch(error){
+        console.error('Error fetching items from the database',error);
+        res.send('Something went wrong while opening the admin feeds page');
+    }
+})
+
+//Posting the new added item from the adminFeeds form
+app.post('/addProduct',upload.single('productImage'),async(req,res)=>{
+    try{
+        //Convert image buffer to Base64 string
+        const base64Image=req.file.buffer.toString('base64');
+        //Create new product object
+        const newProduct=new Product({
+            productImage:base64Image,//Store image as Base64 string
+            productName:req.body.productName,
+            productPrice:req.body.productPrice,
+            productQuantity:req.body.productQuantity,
+            productCategory:req.body.productCategory
+        });
+        //Save product to database
+        await newProduct.save();
+        res.send('Product added successfully');
+    }catch(err){
+        console.error(err);
+        res.status(500).send('Error adding product');
     }
 })

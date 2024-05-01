@@ -81,6 +81,7 @@
     "minimatch": "^3.1.2",
     "minimist": "^1.2.8",
     "mkdirp": "^0.5.6",
+    "mongoose": "^8.3.2",
     "ms": "^2.0.0",
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
@@ -133,7 +134,6 @@
     "xtend": "^4.0.2",
     "yallist": "^4.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
