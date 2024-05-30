@@ -1205,7 +1205,7 @@ body {
         font-size: 1.2rem;
     }
     .adminFeedsContainer .body .center {
-        width: 99vw;
+        width: 100vw;
         height: max-content;
         display: flex;
         justify-content: center;
@@ -1254,6 +1254,13 @@ body {
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+    .adminFeedsContainer .body .center .tableContent .table table th:nth-of-type(3){
+      max-width: 20px;   
+    }
+    .adminFeedsContainer .body .center .tableContent .table table tr td .buttons #edit,#delete{
+       font-size: 0.5rem;
+       text-align: start;
+    }
     .adminFeedsContainer .body .center .tableContent .tableContentTop p input{
         width: 50vw;
     }
@@ -1280,7 +1287,7 @@ body {
     }
     .adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing{
         width: 70vw;
-        height: 36vh;
+        height: 40vh;
     }
     .adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing input{
         width: 50vw;

@@ -47,7 +47,7 @@
                                 <th>IMAGE</th>
                                 <th>NAME</th>
                                 <th>PRICE</th>
-                                <th>QUANTITY</th>
+                                <th>QUANT</th>
                                 <th>ACTION</th>
                             </tr>
                             <%Feeds.forEach((Feed)=>{ %>
@@ -58,7 +58,7 @@
                                     <td><%=Feed.productQuantity %></td>
                                     <td>
                                         <div class="buttons">
-                                                <button onclick="showDetails('<%=Feed._id %>')">EDIT</button>
+                                                <button onclick="showDetails('<%=Feed._id %>')" id="edit">EDIT</button>
                                             <div class="productEditing" id="detail-<%=Feed._id %>">
                                                 <button id="closeEditProduct" onclick="hideDetails('<%=Feed._id %>')"><i class="fa-solid fa-x"></i></button>
                                                 <div class="editProductDetails">
@@ -90,7 +90,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                                <button class="delete" onclick="showDeleteProduct('<%=Feed._id %>')">DELETE</button>
+                                                <button class="delete" onclick="showDeleteProduct('<%=Feed._id %>')" id="delete">DELETE</button>
                                                 <div class="productDeletion" id="delete-<%=Feed._id %>">
                                                     <button id="closeProductDeletion" onclick="hideDeletion('<%=Feed._id %>')"><i class="fa-solid fa-x"></i></button>
                                                     <div class="deleteProduct">
