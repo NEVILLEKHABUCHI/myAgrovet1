@@ -7,6 +7,7 @@ const bodyParser=require('body-parser');
 const multer=require('multer');
 const path=require('path');
 const session=require('express-session');
+const flash=require('connect-flash');
 
 dotenv.config({path:'./important.env'});
 
@@ -17,6 +18,22 @@ app.use(express.static('public'));
 //Middleware for parsing URL-encoded form data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+
+//Setting up sessions middleware
+app.use(session({
+    secret: 'Ni_Neville',
+    resave: false,
+    saveUninitialized: true
+}));
+//Setting up flash middleware
+app.use(flash());
+
+//Making flash messages available in all templates
+app.use((req,res,next)=>{
+    res.locals.successMessage=req.flash('success');
+    res.locals.errorMessage=req.flash('error');
+    next();
+})
 
 //Setting up MySQL connection
 const db=mysql.createConnection({
@@ -176,24 +193,13 @@ const productSchema=new mongoose.Schema({
 });
 const Product=mongoose.model('products',productSchema);
 
-//Function to get the products' details from mongoDB
-async function getProductDetails(){
-    try{
-        //Query the database to fetch product details
-        const product=await Product.find({},{productImage:1,productName:1,productPrice:1,productQuantity:1});
-        console.log(product);
-    }catch(error){
-        console.error('Error fwetching product details',error);
-    }
-}
 //Rendering the adminFeeds page which entails getting items from mongodb database
 app.get('/adminFeeds',async(req,res)=>{
     try{
-        //Query the database to fetch product details
-        const products=await Product.find({},{productImage:1,productName:1,productPrice:1,productQuantity:1});
-        res.render('adminFeeds',{title:'Admin Feeds',Feeds:products});
-    }
-    catch(error){
+           //Query the database to fetch product details
+           const products=await Product.find({});
+           res.render('adminFeeds',{title:'Admin Feeds',Feeds:products});
+        }catch(error){
         console.error('Error fetching items from the database',error);
         res.send('Something went wrong while opening the admin feeds page');
     }
@@ -214,9 +220,55 @@ app.post('/addProduct',upload.single('productImage'),async(req,res)=>{
         });
         //Save product to database
         await newProduct.save();
-        res.send('Product added successfully');
+        //Set succcess message
+        req.flash('success','Product added successfully');
+        res.redirect('/adminFeeds');
     }catch(err){
         console.error(err);
-        res.status(500).send('Error adding product');
+        //Set error message
+        req.flash('error','Failed to add product');
+        res.redirect('/adminFeeds');
+    }
+});
+
+//Route to handle form submission of the editted product and update the product
+app.post('/products/:id/edit',upload.single('productImage'),async(req,res)=>{
+    const {productName,productPrice,productQuantity,productCategory}=req.body;
+    const updateData={productName,productPrice,productQuantity,productCategory};
+
+    if(req.file){
+        updateData.productImage=req.file.buffer.toString('base64');
+    }
+
+    try{
+        await Product.findByIdAndUpdate(req.params.id,updateData);
+        //Send success message
+        req.flash('success','Product updated Successfully');
+        //Redirect to the route that renders the adminFeeds page
+        res.redirect('/adminFeeds');
+    }
+    catch(err){
+        //Send error message
+        console.error(err);
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminFeeds');
+    }
+});
+
+//Route to handle delete operation for a specific product
+app.post('/deleteProduct',async(req,res)=>{
+    try{
+        const productId=req.body.productId;
+        //Delete the product from the database using the product ID
+        await Product.findByIdAndDelete(productId);
+        //Send success message
+        req.flash('success','Product Deleted successfully');
+        //Redirect to the route that renders the adminFeeds page
+        res.redirect('/adminFeeds');
+    }catch(err){
+        console.error('Error deleting product:',err);
+        //Send error message
+        req.flash('error','Failed to delete the product');
+        res.redirect('/adminFeeds');
     }
 })

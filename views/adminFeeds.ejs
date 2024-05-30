@@ -26,9 +26,19 @@
                 </div>
             </div>
             <div class="center">
+                <%if(successMessage.length>0){ %>
+                    <div class="alert alert-success">
+                        <%=successMessage %>
+                    </div>
+                <% } %>
+                <%if(errorMessage.length>0){ %>
+                    <div class="alert alert-danger">
+                        <%=errorMessage %>
+                    </div>
+                <% } %>
                 <div class="tableContent">
                     <div class="tableContentTop">
-                        <p>SEARCH <input type="text"></p>
+                        <p><span>SEARCH</span> <input type="text" placeholder="Chicken Growers Mash"></p>
                         <button onclick="addNewItem()">ADD FEED</button>
                     </div>
                         <div class="table">
@@ -44,15 +54,60 @@
                                 <tr>
                                     <td><img src="data:image/png;base64,<%=Feed.productImage %>" alt="Animal feed"></td>
                                     <td><%=Feed.productName %></td>
-                                    <td><%=Feed.productPrice %></td>
+                                    <td><%=Feed.productPrice %>/=</td>
                                     <td><%=Feed.productQuantity %></td>
                                     <td>
                                         <div class="buttons">
-                                            <button>EDIT</button>
-                                            <button>DELETE</button>
-                                            <button>FREEZE</button>
+                                                <button onclick="showDetails('<%=Feed._id %>')">EDIT</button>
+                                            <div class="productEditing" id="detail-<%=Feed._id %>">
+                                                <button id="closeEditProduct" onclick="hideDetails('<%=Feed._id %>')"><i class="fa-solid fa-x"></i></button>
+                                                <div class="editProductDetails">
+                                                    <form action="/products/<%=Feed._id %>/edit" method="post" enctype="multipart/form-data" id="productEditing">
+                                                        <h4>PRODUCT EDITING </h4>
+                                                        <div>
+                                                            <label for="productImage">PRODUCT IMAGE: </label><br>
+                                                            <input type="file" id="productImage" name="productImage">
+                                                        </div>
+                                                        <div>
+                                                            <label for="productName">PRODUCT NAME: </label><br>
+                                                            <input type="text" id="productName" name="productName" value="<%=Feed.productName %>">
+                                                        </div>
+                                                        <div>
+                                                            <label for="productPrice">PRODUCT PRICE: </label><br>
+                                                            <input type="text" id="productPrice" name="productPrice" value="<%=Feed.productPrice %>">
+                                                        </div>
+                                                        <div>
+                                                            <label for="productQuantity">PRODUCT QUANTITY: </label><br>
+                                                            <input type="text" id="productQuantity" name="productQuantity" value="<%=Feed.productQuantity %>">
+                                                        </div>
+                                                        <div>
+                                                            <label for="productCategory">PRODUCT CATEGORY: </label><br>
+                                                            <input type="text" id="productCategory" name="productCategory" value="<%=Feed.productCategory %>">
+                                                        </div>
+                                                        <div class="button">
+                                                            <button type="submit">EDIT PRODUCT</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                                <button class="delete" onclick="showDeleteProduct('<%=Feed._id %>')">DELETE</button>
+                                                <div class="productDeletion" id="delete-<%=Feed._id %>">
+                                                    <button id="closeProductDeletion" onclick="hideDeletion('<%=Feed._id %>')"><i class="fa-solid fa-x"></i></button>
+                                                    <div class="deleteProduct">
+                                                        <form action="/deleteProduct" method="post" id="deleteProduct">
+                                                            <h4>PRODUCT DELETING</h4>
+                                                            <div>
+                                                                <p>Are you sure you want to delete <br><span><%=Feed.productName %></span>?</p>
+                                                                <input type="hidden" name="productId" value="<%=Feed._id %>">
+                                                            </div>
+                                                            <div class="button">
+                                                                <button type="submit">YES</button>
+                                                                <button type="button" onclick="cancelDeletion('<%=Feed._id %>')">NO</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                         </div>
-                                        <button id="icon"><i class="fa-solid fa-ellipsis-vertical" style="color: red;"></i></button>
                                     </td>
                                 </tr>
                                 <% }) %>
@@ -60,7 +115,7 @@
                         </div>
                         <div class="addProduct">
                             <button id="close" onclick="closeNewItem()"><i class="fa-solid fa-x"></i></button>
-                            <form action="/addProduct" method="post" enctype="multipart/form-data">
+                            <form action="/addProduct" method="post" enctype="multipart/form-data" id="addProduct">
                                 <h4>NEW ITEM</h4>
                                 <div>
                                     <label for="product">PRODUCT IMAGE:</label><br>

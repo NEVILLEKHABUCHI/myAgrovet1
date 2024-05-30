@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 * a {
     text-decoration: none;
@@ -439,7 +439,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: #00563B;
+    background-color: #03C03C;
 }
 .adminContainer .center .centerTop {
     width: 70vw;
@@ -453,7 +453,7 @@ body {
     background-color: #f4f4f4;
 }
 .adminContainer .center .centerTop a{
-    color: #00401A;
+    color: #228B22;
 }
 .adminContainer .center .centerTop button {
     display: none;
@@ -525,7 +525,7 @@ body {
     background-color: #E5E4E2;
 }
 .adminFeedsContainer .body {
-    background-color: #00563B;
+    background-color: #03C03C;
 }
 .adminFeedsContainer .body .top {
     width: inherit;
@@ -569,7 +569,7 @@ body {
 }
 .adminFeedsContainer .body .top .right p a{
     text-decoration: none;
-    color: #00401A;
+    color: #228B22;
 }
 .adminFeedsContainer .body .top .right button {
     display: none;
@@ -580,6 +580,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.adminFeedsContainer .body .center .alert {
+    position: absolute;
+    top: 21vh;
+    padding: 2px;
+    background-color: #F2F3F4;
+    animation: fadeOut 5s forwards;
+    overflow: hidden;
+}
+.adminFeedsContainer .body .center .alert-success{
+    color: #1F75FE;
+}
+.adminFeedsContainer .body .center .alert-danger{
+    color: red;
 }
 .adminFeedsContainer .body .center .tableContent{
     width: 70vw;
@@ -594,17 +608,36 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 5px;
-    background-color: #03C03C;
+    background-color: #E5E4E2;
     border-radius: 5px;
+}
+.adminFeedsContainer .body .center .tableContent .tableContentTop p input{
+    width: 30vw;
+    height: 3vh;
+    color: #03C03C;
+    border-radius: 5px;
+    border: 1px solid #03C03C;
+}
+.adminFeedsContainer .body .center .tableContent .tableContentTop p span {
+    background-color: #03C03C;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.8rem;
+}
+.adminFeedsContainer .body .center .tableContent .tableContentTop button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.8rem;
+    font-family: "Sedan SC", serif;
 }
 .adminFeedsContainer .body .center .tableContent .table{
     width: 65vw;
-    border: 1px solid #00401A;
+    border: 1px solid #228B22;
     margin: 2vh 2.5vw;
-}
-.adminFeedsContainer .body .center .tableContent .table .header {
-    display: flex;
-    justify-content: space-between;
 }
 .adminFeedsContainer .body .center .tableContent .addProduct{
     width: 50vw;
@@ -612,7 +645,8 @@ body {
     position: absolute;
     top: 32vh;
     left: 30vw;
-    background-color: white;
+    background-image: url('/HomepageImages/Pigs.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -621,26 +655,46 @@ body {
 .adminFeedsContainer .body .center .tableContent .addProduct #close{
     position: relative;
     bottom: 28vh;
-    right: 6.7vw;
+    right: 6.85vw;
     font-size: 1.2rem;
+    border: none;
+    color: white;
+    background-color: #1B1B1B;
 }
-.adminFeedsContainer .body .center .tableContent .addProduct form {
+.adminFeedsContainer .body .center .tableContent .addProduct #addProduct {
     width: 35vw;
     height: 42vh;
-    background-color: #E5E4E2;
+    background-color: rgb(255,255,255,90%);
     border-radius: 10px;
 }
-.adminFeedsContainer .body .center .tableContent .addProduct form input{
-    width: 20vw;
-    height: 4vh;
-    margin-left: 2vw;
-    border-radius: 2px;
-    border: none;
+.adminFeedsContainer .body .center .tableContent .addProduct #addProduct h4{
+    display: flex;
+    justify-content: center;
+    color: #03C03C;
 }
-.adminFeedsContainer .body .center .tableContent .addProduct form div {
+.adminFeedsContainer .body .center .tableContent .addProduct #addProduct input{
+    width: 22vw;
+    height: 4vh;
+    margin-left: 3vw;
+    border-radius: 5px;
+    border: 1.5px solid #03C03C;
+    background-color: #E5E4E2;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct #addProduct div {
     margin: 1vh 1vw;
 }
-.adminFeedsContainer .body .center .tableContent .addProduct form .button{
+.adminFeedsContainer .body .center .tableContent .addProduct #addProduct .button{
+    display: flex;
+    justify-content: center;
+}
+.adminFeedsContainer .body .center .tableContent .addProduct #addProduct .button button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.8rem;
+    font-family: "Sedan SC", serif;
     display: flex;
     justify-content: center;
 }
@@ -649,24 +703,152 @@ body {
     border-collapse: collapse;
 }
 .adminFeedsContainer .body .center .tableContent .table table th,td{
-    border: 1px solid;
+    border: 1px solid #03C03C;
     text-align: center;
 }
-.adminFeedsContainer .body .center .tableContent .table td #icon{
-    display: none;
-}
-
 .adminFeedsContainer .body .center .tableContent .table table tr td img{
     width: 50px;
     height: 50px;
 }
-/* .adminFeedsContainer .body .center .tableContent .table table tr th:nth-of-type(2){
+.adminFeedsContainer .body .center .tableContent .table table tr td button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.8rem;
+    font-family: "Sedan SC", serif;
+}
+.adminFeedsContainer .body .center .tableContent .table table tr td:last-of-type .buttons{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+.adminFeedsContainer .body .center .tableContent .table table tr td .buttons button:nth-of-type(2){
+    background-color: red;
+}
+.adminFeedsContainer .body .center .tableContent .table table tr th:nth-of-type(2){
     width: 30vw;
-} */
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing{
+    width: 50vw;
+    height: 60vh;
+    position: absolute;
+    top: 32vh;
+    left: 30vw;
+    background-image: url('/HomepageImages/Pigs.jpg');
+    background-size: cover;
+    display: none;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing #closeEditProduct{
+    position: relative;
+    /* bottom: 28vh; */
+    right: 24.2vw;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    background-color: #1B1B1B;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails{
+    width: 50vw;
+    height: 55.5vh;
+    display: flex;
+    justify-content: center;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing{
+    width: 35vw;
+    height: 50vh;
+    text-align: start;
+    background-color: rgb(255,255,255,90%);
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing h4{
+    display: flex;
+    justify-content: center;
+    color: #03C03C;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing input{
+    width: 22vw;
+    height: 4vh;
+    margin-left: 3vw;
+    border-radius: 5px;
+    border: 1.5px solid #03C03C;
+    background-color: #E5E4E2;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing div {
+    margin: 1vh 1vw;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing .button{
+    display: flex;
+    justify-content: center;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing .button button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 0.8rem;
+    font-family: "Sedan SC", serif;
+    display: flex;
+    justify-content: center;
+}
+/* Styling the div that opens after the delete button is clicked */
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion{
+    width: 50vw;
+    height: 60vh;
+    position: absolute;
+    top: 32vh;
+    left: 30vw;
+    background-image: url('/HomepageImages/Pigs.jpg');
+    background-size: cover;
+    display: none;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion #closeProductDeletion{
+    position: relative;
+    /* bottom: 28vh; */
+    right: 24.2vw;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    background-color: #1B1B1B;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct{
+    width: 50vw;
+    height: 55.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct{
+    width: 35vw;
+    height: 20vh;
+    text-align: start;
+    background-color: rgb(255,255,255,90%);
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct h4{
+    display: flex;
+    justify-content: center;
+    color: #03C03C;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct div{
+    margin: 0 1vw;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct div span{
+    color: #03C03C;
+}
+.adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct .button{
+    width: 33vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw;
+    margin-top: 4vh;
+}
+
+
 
 
 /*Media querrying*/
-@media only screen  and (max-width:1000px) {
+@media only screen  and (max-width:900px) {
     /*Media-querying the landing page*/
     body {
         overflow-y: scroll;
@@ -1043,43 +1225,94 @@ body {
         width: inherit;
         margin: 0;
     } 
+    /* Media querying the adminFeeds addProduct */
     .adminFeedsContainer .body .center .tableContent .addProduct{
-        width: 80vw;
-        height: 60vh;
+        width: 90vw;
+        height: 50vh;
         position: absolute;
-        top: 16vh;
-        left: 7vw;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: none;
+        top: 18vh;
+        left: 4vw;
     }
     .adminFeedsContainer .body .center .tableContent .addProduct #close{
         position: relative;
-        bottom: 28vh;
-        right: 2vw;
-        font-size: 1.2rem;
+        bottom: 23.5vh;
+        right: 12.5vw;
     }
-    .adminFeedsContainer .body .center .tableContent .addProduct form{
-        width: 70vw;
-        height: 40vh;
-    }
-    .adminFeedsContainer .body .center .tableContent .addProduct form input{
+    .adminFeedsContainer .body .center .tableContent .addProduct #addProduct {
         width: 60vw;
+        height: 32vh;
+    }
+    .adminFeedsContainer .body .center .tableContent .addProduct #addProduct input{
+        width: 50vw;
+        height: 3vh;
+        margin-left: 3vw;
     }
     .adminFeedsContainer .body .center .tableContent .table table th,td{
-        text-align: left;
+        text-align: center;
         max-width: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    .adminFeedsContainer .body .center .tableContent .table td .buttons{
-        display: none;
+    .adminFeedsContainer .body .center .tableContent .tableContentTop p input{
+        width: 50vw;
     }
-    .adminFeedsContainer .body .center .tableContent .table td #icon{
-        display: block;
+    
+    /* Media querying the adminFeeds editProduct */
+    .adminFeedsContainer .body .center .tableContent .buttons .productEditing{
+        width: 90vw;
+        height: 50vh;
+        position: absolute;
+        top: 18vh;
+        left: 4vw;
     }
-   
+    .adminFeedsContainer .body .center .tableContent .buttons .productEditing #closeEditProduct{
+        position: relative;
+        /* bottom: 23.5vh; */
+        right: 42.5vw;
+    }
+    .adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails{
+        width: 90vw;
+        height: 47vh;
+        display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    .adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing{
+        width: 70vw;
+        height: 36vh;
+    }
+    .adminFeedsContainer .body .center .tableContent .buttons .productEditing .editProductDetails #productEditing input{
+        width: 50vw;
+        height: 3vh;
+        margin-left: 3vw;
+    }
+    /* Media querying productDeletion */
+    .adminFeedsContainer .body .center .tableContent .buttons .productDeletion{
+        width: 90vw;
+        height: 45.5vh;
+        position: absolute;
+        top: 18vh;
+        left: 4vw;
+    }
+    .adminFeedsContainer .body .center .tableContent .buttons .productDeletion #closeProductDeletion{
+        position: relative;
+        /* bottom: 28vh; */
+        right: 42.5vw;
+    }
+    .adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct{
+        width: 90vw;
+        height: 42.5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct{
+        width: 80vw;
+        height: 12vh;
+    }
+     .adminFeedsContainer .body .center .tableContent .buttons .productDeletion .deleteProduct #deleteProduct .button{
+        width: 77vw;
+        margin-top: 2vh;
+     }
 }
