@@ -1,16 +1,27 @@
-let contactInfo=document.querySelector('.contactInfo');
+
 let adminTabs=document.querySelector('.centerTop');
 let adminFeeds=document.querySelector('#FeedsTabs');
 let addNewProduct=document.querySelector('.addProduct');
 let productEditing=document.querySelector('.productEditing');
 
 
-//Functions for the contact information on the landing page
-function showContactInfo(){
-    contactInfo.style.display="block";
+// Functions for showing right1 tabs in the main page
+function showRight1(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
 }
-function closeContactInfo(){
-    contactInfo.style.display="none";
+//Function for closing right1 tab in the main page
+function closeRight1(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
 }
 //Functions for the adminTabs on the admin page
 function showAdminTabs(){

@@ -2,155 +2,46 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 * a {
     text-decoration: none;
 }
 body {
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-.container {
-    width: 100vw;
-    height: 99vh;
-    overflow: hidden;
+.homeContainer {
+    width: 99vw;
+    height: max-content;
 }
-.container .top{
+.homeContainer .top {
     width: inherit;
-    height: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    background-color: #E5E4E2;
+    padding: 0 1vw;
 }
-.container .top .left{
-    display: flex;
-}
-.container .top .left img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.container .top .left h2{
-    display: flex;
-    align-items: center;
-}
-.container .top .right button{
-    width: 100px;
-    height: 25px;
-    border-radius: 8px;
-    background-color: rgb(23, 222, 26);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-}
-.container .body{
-    display: flex;
-    width: inherit;
-    height: 84vh;
-    background-color: #F7F7F7;
-}
-.container .body .left{
-    width: 60vw;
+.homeContainer .top .left{
+    width: 18vw;
     height: inherit;
+    display: flex;
+    align-items: center;
 }
-.container .body .left img{
-    width: inherit;
-    height: inherit;
+.homeContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
     object-fit: cover;
 }
-.container .body .right{
-    width: 39vw;
+.homeContainer .top .right-1{
+    width: 50vw;
     height: inherit;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-.container .body .right .content {
-    width: 30vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 2px;
-    background-color: #E5E4E2;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.container .body .right div {
-    display: flex;
     justify-content: space-between;
 }
-.container .body .right .content div{
-    margin: 10px 20px;
-}
-.container .body .right .content div p{
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(23, 222, 26);
-}
-.container .body .right .content div a{
-    color: white;
-}
-.container .body .right .contactInfo {
-    width: 25vw;
-    height: 84vh;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: -1px;
-    background-color: #F4F0EC;
+.homeContainer .top .right-2{
     display: none;
-}
-.container .body .right .contactInfo .details{
-    padding: 5px 0;
-    display: flex;
-    flex-direction: column;
-}
-.container .body .right .contactInfo .details #button{
-    font-size: 1.5rem;
-    background-color: #03C03C;
-}
-.container .body .right .contactInfo .details #button button{
-    border: none;
-    padding: 2px;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-}
-.container .body .right .contactInfo .contact {
-    width: inherit;
-    height: 8vh;
-    display: flex;
-    padding: 0 10px;
-    margin: 8px 0;
-}
-.container .body .right .contactInfo .contact #icon{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    background-color: rgb(23, 222, 26);
-}
-.container .body .right .contactInfo .contact #icon i{
-    color: white;
-}
-.container .body .right .contactInfo .contact div {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-}
-.container .body .right .contactInfo .details .divider {
-    border: 1px solid rgb(23, 222, 26);
 }
 /*Styling the sign up page*/
 .signupContainer {
@@ -852,79 +743,48 @@ body {
     /*Media-querying the landing page*/
     body {
         overflow-y: scroll;
+        overflow-x: hidden;
     }
-    .container{
-        overflow-y: scroll;
+    /* Media querying the home page */
+    .homeContainer {
+        width: 99vw;
+        height: max-content;
     }
-    .container .top {
-        display: flex;
-        flex-direction: column;
-    }
-    .container .top .left {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    .container .top .right{
+    .homeContainer .top {
         width: inherit;
-        display: flex;
-        justify-content: end;
-        padding-right: 15px;
-        margin-bottom: 10px;
+        height: 10vh;
     }
-    .container .body{
-        display: flex;
-        flex-direction: column;
-        width: inherit;
-        height: 84vh;
-    }
-    .container .body .left{
-        width: inherit;
-        height: 40vh;
-    }
-    .container .body .left img{
-        width: inherit;
+    .homeContainer .top .left{
+        width: 30vw;
         height: inherit;
+    }
+    .homeContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
         object-fit: cover;
     }
-    .container .body .right{ 
-        width: inherit;
-        height: 44vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .container .body .right .content {
-        width: fit-content;
-        height: 25vh;
+    .homeContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
         display: flex;
         flex-direction: column;
-        padding: 5px;
-        margin-bottom: 80px;
-    }
-    .container .body .right .contactInfo {
-        width: 90vw;
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
+        /* justify-content: space-between;s */
         position: absolute;
-        top: 150px;
-        right: -1px;
+        top: 10.5vh;
         display: none;
     }
-    .container .body .right .contactInfo .details{
-        padding: 5px 0;
-        display: flex;
-        flex-direction: column;
-    }
-    .container .body .right .contactInfo .contact {
-        width: inherit;
-        height: 8vh;
+    .homeContainer .top .right-2{
+        display: block;
         display: flex;
         align-items: center;
-        padding: 0 10px;
-        margin: 8px 0;
     }
+    .homeContainer .top .right-2 button{
+        font-size: 2rem;
+    }
+    .homeContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    
     /*Media-querying the signup/login page*/
     .signupContainer .top {
         display: flex;

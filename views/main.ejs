@@ -2,81 +2,26 @@
 <html lang="en">
 <%-include('./partials/header.ejs') %>
 <body>
-    <div class="container">
-        <div class="top">
-            <div class="left">
-                <img src="/HomepageImages/NEVOLINE_LOGO.png" alt="NEVOLINE">
-                <h2>NEVOLINE AGROVET</h2>
-            </div>
-            <div class="right">
-                <button onclick="showContactInfo()">Contact Info</button>
-            </div>
+  <div class="homeContainer">
+    <div class="top">
+        <div class="left">
+            <img src="/HomepageImages/Green Plant and Agriculture Logo.png" alt="">
         </div>
-        <div class="body">
-            <div class="left">
-                <img src="/HomepageImages/cow.jpg" alt="WELCOME TO NEVOLINE AGROVET" loading="lazy">
-            </div>
-            <div class="right">
-                <div class="content">
-                    <p>Are you in need of solutions to your farming practices, quality animal feeds,
-                        best drugs, certified seeds, quality veterinary services, best farm machineries
-                        and farm equipment?<br>
-                        Worry no more &#128522 <br>
-                        <span>NEVOLINE AGROVET GOT YOU.</span>
-                    </p>
-                    <div>
-                        <p><a href="/signup">SIGN UP</a></p>
-                        <p><a href="/login">LOG IN</a></p>
-                    </div>
-                </div>
-                <div class="contactInfo">
-                    <div class="details">
-                        <p id="button"><button onclick="closeContactInfo()"><i class="fa-solid fa-x"></i></button></p>
-                        <div class="contact">
-                            <p id="icon"><i class="fa-solid fa-location-pin"></i></p>
-                            <div>
-                                <h4>POSTAL ADDRESS</h4>
-                                <p>778 KAKAMEGA-MUSOLI</p>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="contact">
-                            <p id="icon"><i class="fa-solid fa-phone"></i> </p>
-                            <div>
-                                <h4>PHONE NUMBER</h4>
-                                <p>0792333663</p>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="contact">
-                            <p id="icon"><i class="fa-solid fa-envelope"></i> </p>
-                            <div>
-                                <h4>EMAIL ADDRESS</h4>
-                                <p><address>nevillekhabuchi@gmail.com</address></p>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="contact">
-                            <p id="icon"><i class="fa-brands fa-x-twitter"></i></p>
-                            <div>
-                                <h4>TWITTER</h4>
-                                <p>@NEVOLINEagrovet</p>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="contact">
-                            <p id="icon"><i class="fa-brands fa-square-facebook"></i></p>
-                            <div>
-                                <h4>FACEBOOK</h4>
-                                <p>NEVOLINEagrovet</p>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="right-1">
+            <a href="">HOME</a>
+            <a href="">ABOUT US</a>
+            <a href="">OUR SERVICES</a>
+            <a href="">OUR PRODUCTS</a>
+            <a href="">SIGN UP</a>
+            <a href="">LOG IN</a>
+        </div>
+        <div class="right-2">
+            <button onclick="showRight1()" id="openTab"><i class="fa-solid fa-bars"></i></button>
+            <button onclick="closeRight1()" id="closeTab">X</button>
         </div>
     </div>
-    <script src="Vanilla.js"></script>
+    <div class="body"></div>
+  </div>
+  <script src="Vanilla.js"></script>
 </body>
 </html>
