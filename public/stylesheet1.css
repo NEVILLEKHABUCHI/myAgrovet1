@@ -70,8 +70,8 @@ body {
     margin-top: 5vh;
     display: grid;
     grid-template-columns: repeat(2,30vw);
-    gap: 5vw;
-    padding: 0 15vw;
+    gap: 2vw;
+    padding: 0 18vw;
     padding-bottom: 5vh;
 }
 .homeContainer .body .body-content div{
@@ -949,8 +949,8 @@ body {
         margin-top: 5vh;
         display: grid;
         grid-template-columns: repeat(1,65vw);
-        gap: 5vw;
-        padding: 0 15vw;
+        gap: 2vw;
+        padding: 0 18vw;
     }
     .homeContainer .body .body-content div{
         width: 65vw;
