@@ -43,6 +43,9 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+.homeContainer .top .right-1 a {
+    font-weight: bold;
+}
 .homeContainer .top .right-2{
     display: none;
 }
@@ -76,7 +79,8 @@ body {
 }
 .homeContainer .body .body-content div{
     width: 30vw;
-    height: 45vh;
+    /* height: 45vh; */
+    height: max-content;
 }
 .homeContainer .body .body-content .whoWeAre h1 {
     display: flex;
@@ -954,7 +958,8 @@ body {
     }
     .homeContainer .body .body-content div{
         width: 65vw;
-        height: 58vh;
+        /* height: 58vh; */
+        height: max-content;
     }
     .homeContainer .body .body-content .whoWeAre p:nth-of-type(2){
        font-size: 1.2rem;
