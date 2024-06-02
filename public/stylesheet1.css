@@ -867,7 +867,7 @@ body {
     }
     .homeContainer .body .body-top div{
         width: 80vw;
-        height: 30vh;
+        height: 20vh;
         position: absolute;
         top: 30vh;
         left: 10vw;
@@ -879,13 +879,13 @@ body {
     .homeContainer .body .body-content {
         margin-top: 5vh;
         display: grid;
-        grid-template-columns: repeat(1,60vw);
+        grid-template-columns: repeat(1,65vw);
         gap: 5vw;
         padding: 0 15vw;
     }
     .homeContainer .body .body-content div{
         width: 65vw;
-        height: 55vh;
+        height: 60vh;
     }
     .homeContainer .body .body-content .whoWeAre p:nth-of-type(2){
        font-size: 1.2rem;
