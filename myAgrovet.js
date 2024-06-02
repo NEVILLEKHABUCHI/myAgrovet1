@@ -77,7 +77,7 @@ const transporter=nodemailer.createTransport({
 });
 //Rendering the home page
 app.get('/',(req,res)=>{
-    res.render('main',{title:'Landing page'})
+    res.render('main',{title:'Nevoline Agrovet'})
 });
 //Rendering the signup page
 app.get('/signup',(req,res)=>{
