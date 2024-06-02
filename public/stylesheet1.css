@@ -72,6 +72,7 @@ body {
     grid-template-columns: repeat(2,30vw);
     gap: 5vw;
     padding: 0 15vw;
+    padding-bottom: 5vh;
 }
 .homeContainer .body .body-content div{
     width: 30vw;
@@ -105,10 +106,78 @@ body {
     padding: 3px;
     border-radius: 10px;
 }
+.homeContainer .body .body-content .Our-services h1 {
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .Our-services p:first-of-type{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .Our-services p:first-of-type span {
+    width: 10vw;
+    border: 2px solid #03C03C;
+    border-radius: 2px;
+}
+.homeContainer .body .body-content .Our-services p:nth-of-type(2){
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.homeContainer .body .body-content .Our-services p:nth-of-type(3){
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .Our-services p:nth-of-type(3) a{
+    text-decoration: none;
+    background-color: #03C03C;
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+}
+.homeContainer .body .body-content .Our-products h1 {
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .Our-products p:first-of-type{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .Our-products p:first-of-type span {
+    width: 10vw;
+    border: 2px solid #03C03C;
+    border-radius: 2px;
+}
+.homeContainer .body .body-content .Our-products p:nth-of-type(2){
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.homeContainer .body .body-content .Our-products p:nth-of-type(3){
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .Our-products p:nth-of-type(3) a{
+    text-decoration: none;
+    background-color: #03C03C;
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+}
 .homeContainer .body .body-content .logo img {
     width: inherit;
-    height: inherit;
+    height: 40vh;
     object-fit: cover;
+}
+.homeContainer .body .body-content .logo p {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+.homeContainer .body .body-content .logo a {
+    padding: 1px;
+    border: 2px solid #03C03C;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #03C03C;
 }
 /*Styling the sign up page*/
 .signupContainer {
@@ -889,6 +958,17 @@ body {
     }
     .homeContainer .body .body-content .whoWeAre p:nth-of-type(2){
        font-size: 1.2rem;
+    }
+    .homeContainer .body .body-content .Our-services p:nth-of-type(2){
+        font-size: 1.2rem;
+     }
+     .homeContainer .body .body-content .Our-products p:nth-of-type(2){
+        font-size: 1.2rem;
+     }
+     .homeContainer .body .body-content .logo img {
+        width: inherit;
+        height: 50vh;
+        object-fit: cover;
     }
     
     /*Media-querying the signup/login page*/
