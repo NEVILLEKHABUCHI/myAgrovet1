@@ -257,7 +257,55 @@ body {
 .aboutContainer .body .body-content .about-us p{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+.aboutContainer .body .body-content .mission{
+    width: inherit;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(2,30vw);
+    gap: 2vw;
+    padding: 0 8vw;
+}
+.aboutContainer .body .body-content .mission div{
+    width: 30vw;
+    height: max-content;
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: #03C03C;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.aboutContainer .body .body-content .mission div .mission-top{
+    width: 28vw;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+.aboutContainer .body .body-content .mission div h2{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.aboutContainer .body .body-content .mission div #icon{
+    width: max-content;
+    height: max-content;
+    border-radius: 50%;
+    padding: 1vw;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: white;
+    color: #03C03C;
+}
+.aboutContainer .body .body-content .about-us .button{
+    display: flex;
+    justify-content: center;
+}
+.aboutContainer .body .body-content .about-us .button a{
+    padding: 1px;
+    border: 2px solid #03C03C;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #03C03C;
+}
 /*Styling the sign up page*/
 .signupContainer {
     width: 100vw;
@@ -1116,7 +1164,35 @@ body {
     .aboutContainer .body .body-content .about-us p{
         font-size: 1.2rem;
     }
-    
+    .aboutContainer .body .body-content .about-us .mission{
+        width: inherit;
+        height: max-content;
+        display: grid;
+        grid-template-columns: repeat(1,63vw);
+        gap: 2vw;
+        padding: 0 8vw;
+    }
+    .aboutContainer .body .body-content .about-us .mission div{
+        width: 63vw;
+        height: max-content;
+        font-size: 1.2rem;
+    }
+    .aboutContainer .body .body-content .about-us .mission div .mission-top{
+        width: 61vw;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+    }
+    .aboutContainer .body .body-content .about-us .mission div h2{
+        display: flex;
+        justify-content: center;
+        color: black;
+    }
+    .aboutContainer .body .body-content .about-us .mission div #icon{
+        width: max-content;
+        font-size: 1.5rem;
+    }
+   
     /*Media-querying the signup/login page*/
     .signupContainer .top {
         display: flex;
