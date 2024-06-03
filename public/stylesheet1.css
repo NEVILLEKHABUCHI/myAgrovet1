@@ -233,11 +233,29 @@ body {
     /* filter: blur(5px); */
 }
 .aboutContainer .body .body-top div{
+    height: max-content;
     background-color: rgb(255, 255, 255,70%);
     position: absolute;
     top: 40vh;
     left: 45vw;
     padding: 3px;
+}
+.aboutContainer .body .body-content {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vh;
+}
+.aboutContainer .body .body-content .about-us {
+    width: 80vw;
+    height: max-content;
+}
+.aboutContainer .body .body-content .about-us h1{
+    display: flex;
+    justify-content: center;
+    text-decoration: underline wavy #03C03C;
+}
+.aboutContainer .body .body-content .about-us p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /*Styling the sign up page*/
@@ -997,7 +1015,7 @@ body {
     }
     .homeContainer .body .body-top div{
         width: 80vw;
-        height: 25vh;
+        height: max-content;
         position: absolute;
         top: 30vh;
         left: 10vw;
@@ -1094,6 +1112,9 @@ body {
         left: 21vw;
         padding: 3px;
         text-align: center;
+    }
+    .aboutContainer .body .body-content .about-us p{
+        font-size: 1.2rem;
     }
     
     /*Media-querying the signup/login page*/
