@@ -79,6 +79,10 @@ const transporter=nodemailer.createTransport({
 app.get('/',(req,res)=>{
     res.render('main',{title:'Nevoline Agrovet'})
 });
+//Rendering the about page
+app.get('/about',(req,res)=>{
+    res.render('about',{title:'Nevoline Agrovet/About'});
+})
 //Rendering the signup page
 app.get('/signup',(req,res)=>{
     res.render('signup',{title:'Sign up',errorMessage:null});

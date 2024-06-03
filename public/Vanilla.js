@@ -27,6 +27,28 @@ function closeRight1(){
     closeTab.style.display="none";
     welcome_message.style.display="block";
 }
+// Function for showing the right1 tab in the about page
+function OpenRight1(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let about_message=document.querySelector('.about-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    about_message.style.display="none";
+}
+// Function for closing the right1 tab in the about page
+function CloseRight1(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let about_message=document.querySelector('.about-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    about_message.style.display="block";
+}
 //Functions for the adminTabs on the admin page
 function showAdminTabs(){
     adminTabs.style.display="flex";

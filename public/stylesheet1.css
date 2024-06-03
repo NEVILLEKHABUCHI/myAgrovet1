@@ -183,6 +183,63 @@ body {
     text-decoration: none;
     color: #03C03C;
 }
+/* Styling the about page */
+.aboutContainer{
+    width: 99vw;
+    height: max-content;
+}
+.aboutContainer .top {
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.aboutContainer .top a {
+    color: black;
+}
+.aboutContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.aboutContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.aboutContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.aboutContainer .top .right-1 a {
+    font-weight: bold;
+}
+.aboutContainer .top .right-2{
+    display: none;
+}
+.aboutContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+}
+.aboutContainer .body .body-top img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    /* filter: blur(5px); */
+}
+.aboutContainer .body .body-top div{
+    background-color: rgb(255, 255, 255,70%);
+    position: absolute;
+    top: 40vh;
+    left: 45vw;
+    padding: 3px;
+}
+
 /*Styling the sign up page*/
 .signupContainer {
     width: 100vw;
@@ -975,6 +1032,68 @@ body {
         width: inherit;
         height: 50vh;
         object-fit: cover;
+    }
+    /* Media querying the about page */
+     .aboutContainer {
+        width: 99vw;
+        height: max-content;
+    }
+    .aboutContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .aboutContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .aboutContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .aboutContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .aboutContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .aboutContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .aboutContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .aboutContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .aboutContainer .body .body-top img{
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        /* filter: blur(2px); */
+    }
+    .aboutContainer .body .body-top div{
+        width: 50vw;
+        height: 5vh;
+        position: absolute;
+        top: 30vh;
+        left: 21vw;
+        padding: 3px;
+        text-align: center;
     }
     
     /*Media-querying the signup/login page*/
