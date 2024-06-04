@@ -41,7 +41,7 @@ const db=mysql.createConnection({
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE,
-    // port: process.env.PORT
+    port: process.env.PORT
 });
 //Connect to MySQL
 db.connect((error)=>{
@@ -82,6 +82,10 @@ app.get('/',(req,res)=>{
 //Rendering the about page
 app.get('/about',(req,res)=>{
     res.render('about',{title:'Nevoline Agrovet/About'});
+});
+// Rendering the ourServices page
+app.get('/ourServices',(req,res)=>{
+    res.render('ourServices',{title:'Nevoline Agrovet/ourServices'});
 })
 //Rendering the signup page
 app.get('/signup',(req,res)=>{
