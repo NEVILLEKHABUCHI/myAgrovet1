@@ -87,6 +87,10 @@ app.get('/about',(req,res)=>{
 app.get('/ourServices',(req,res)=>{
     res.render('ourServices',{title:'Nevoline Agrovet/ourServices'});
 })
+// Rendering the ourProducts page
+app.get('/ourProducts',(req,res)=>{
+    res.render('ourProducts',{title:'Nevoline Agrovet/ourProducts'});
+})
 //Rendering the signup page
 app.get('/signup',(req,res)=>{
     res.render('signup',{title:'Sign up',errorMessage:null});

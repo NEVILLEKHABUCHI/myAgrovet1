@@ -70,6 +70,28 @@ function notshowingRight1(){
     closeTab.style.display="none";
     services_message.style.display="block";
 }
+
+// Functions for showing the right1 tab in ourProducts page
+function right1Showing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let products_message=document.querySelector('.products-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    products_message.style.display="none";
+}
+function right1Notshowing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let products_message=document.querySelector('.products-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    products_message.style.display="block";
+}
 //Functions for the adminTabs on the admin page
 function showAdminTabs(){
     adminTabs.style.display="flex";

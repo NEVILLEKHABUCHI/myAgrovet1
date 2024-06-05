@@ -397,6 +397,108 @@ body {
     display: flex;
     justify-content: center;
 }
+/* Styling tourProducts page */
+.productsContainer{
+    width: 99vw;
+    height: max-content;
+}
+.productsContainer .top {
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.productsContainer .top a {
+    color: black;
+}
+.productsContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.productsContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.productsContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.productsContainer .top .right-1 a {
+    font-weight: bold;
+}
+.productsContainer .top .right-2{
+    display: none;
+}
+.productsContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+}
+.productsContainer .body .body-top img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    /* filter: blur(5px); */
+}
+.productsContainer .body .body-top div{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    position: absolute;
+    top: 40vh;
+    left: 45vw;
+    padding: 3px;
+}
+.productsContainer .body .body-content {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vh;
+}
+.productsContainer .body .body-content .content {
+    width: 80vw;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(2,30vw);
+    gap: 5vw;
+    padding: 2vh 7.5vw;
+}
+.productsContainer .body .body-content .content .content-body{
+    width: 30vw;
+    height: 40vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productsContainer .body .body-content .content .content-body:first-of-type{
+    background-image: url('/HomepageImages/animal\ drugs.jpg');
+    background-size: cover;
+}
+.productsContainer .body .body-content .content .content-body:nth-of-type(2){
+    background-image: url('/HomepageImages/animal\ feeds.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.productsContainer .body .body-content .content .content-body:nth-of-type(3){
+    background-image: url('/HomepageImages/Farm\ machinery.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.productsContainer .body .body-content .content .content-body:nth-of-type(4){
+    background-image: url('/HomepageImages/seeds.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.productsContainer .body .body-content .content .content-body div {
+    background-color: rgb(255, 255, 255,70%);
+}
+
 /*Styling the sign up page*/
 .signupContainer {
     width: 100vw;
@@ -1362,6 +1464,85 @@ body {
     }
     .servicesContainer .body .body-content .content .content-body div p{
         font-size: 1.2rem;
+    }
+    /* Media querying ourProducts page */
+    .productsContainer {
+        width: 99vw;
+        height: max-content;
+    }
+    .productsContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .productsContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .productsContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .productsContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .productsContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .productsContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .productsContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .productsContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .productsContainer .body .body-top img{
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        /* filter: blur(2px); */
+    }
+    .productsContainer .body .body-top div{
+        width: 50vw;
+        height: max-content;
+        position: absolute;
+        top: 30vh;
+        left: 21vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .productsContainer .body .body-content .content {
+        width: 80vw;
+        height: max-content;
+        display: grid;
+        grid-template-columns: repeat(1,62vw);
+        gap: 5vw;
+        padding: 2vh 7.5vw;
+    }
+    .productsContainer .body .body-content .content .content-body{
+        width: 62vw;
+        height: 40vh;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
    
     /*Media-querying the signup/login page*/
