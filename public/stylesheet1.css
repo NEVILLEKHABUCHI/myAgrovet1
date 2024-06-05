@@ -500,131 +500,102 @@ body {
 }
 
 /*Styling the sign up page*/
-.signupContainer {
-    width: 100vw;
-    height: 99vh;
-    overflow: hidden;
+.signupContainer{
+    width: 99vw;
+    height: max-content;
 }
-.signupContainer .top{
+.signupContainer .top {
     width: inherit;
-    height: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    background-color: #E5E4E2;
+    padding: 0 1vw;
+}
+.signupContainer .top a {
+    color: black;
 }
 .signupContainer .top .left{
-    display: flex;
-}
-.signupContainer .top .left img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.signupContainer .top .left h2{
-    display: flex;
-    align-items: center;
-}
-.signupContainer .top .right{
-    display: flex;
-    justify-content: flex-end;
-}
-.signupContainer .top .right a {
-    width: 80px;
-    height: 25px;
-    border-radius: 5px;
-    background-color: rgb(23, 222, 26);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.signupContainer .body{
-    display: flex;
-    width: inherit;
-    height: 84vh;
-    background-color: #F7F7F7;
-}
-.signupContainer .body .left{
-    width: 60vw;
+    width: 18vw;
     height: inherit;
+    display: flex;
+    align-items: center;
 }
-.signupContainer .body .left img{
+.signupContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.signupContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.signupContainer .top .right-1 a {
+    font-weight: bold;
+}
+.signupContainer .top .right-2{
+    display: none;
+}
+.signupContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+}
+.signupContainer .body .body-top img{
     width: inherit;
     height: inherit;
     object-fit: cover;
+    /* filter: blur(5px); */
 }
-.signupContainer .body .right{
-    width: 39vw;
-    height: inherit;
+.signupContainer .body .body-top div{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    position: absolute;
+    top: 40vh;
+    left: 45vw;
+    padding: 3px;
+}
+.signupContainer .body .body-content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 5vh 0;
 }
-.signupContainer .body .right form{
-    width: 20vw;
-    height: 50vh;
-    padding: 2px;
-    background-color: #E5E4E2;
-    border-radius: 8px;
+.signupContainer .body .body-content .content {
+    width: 50vw;
+    height: max-content;
+    padding: 2vh 7.5vw;
 }
-.signupContainer .body .right form .errorMessage{
-    height: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.signupContainer .body .right form #errorMessage{
-    height: 12px;
-    width: inherit;
-    color: red;
-    font-size: 0.7rem;
-    animation: fadeOut 5s forwards;
-    overflow: hidden;
-}
-/*Creating an animation for the errorMessage*/
-@keyframes fadeOut{
-    0%{
-        opacity: 1;
-    }
-    90%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-.signupContainer .body .right form h3 {
-    display: flex;
-    justify-content: center;
-}
-.signupContainer .body .right form input {
-    border: 1px solid;
-}
-.signupContainer .body .right form div{
-    margin: 1px 0;
-    padding: 5px 0;
-}
-.signupContainer .body .right form div input{
-    border-radius: 5px;
-    margin-left: 10px;
-}
-.signupContainer .body .right form button{
-    margin: 10px 75px;
-    width: 80px;
-    height: 20px;
+.signupContainer .body .body-content .content form {
+    padding: 1vw;
     border-radius: 10px;
-    background-color: rgb(23, 222, 26);
-    color: white;
+    box-shadow: 5px 5px 15px black;
+}
+.signupContainer .body .body-content .content form label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.signupContainer .body .body-content .content form input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
     border: none;
 }
-.signupContainer .body .right form #account{
+.signupContainer .body .body-content .content form .button {
     display: flex;
     justify-content: center;
 }
-.signupContainer .body .right form a{
-    color: #03C03C;
+.signupContainer .body .body-content .content form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 /*Styling the Log in page*/
 .loginContainer {
@@ -1545,49 +1516,82 @@ body {
         align-items: center;
     }
    
-    /*Media-querying the signup/login page*/
+    /*Media-querying the signuppage*/
+    .signupContainer {
+        width: 99vw;
+        height: max-content;
+    }
     .signupContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .signupContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .signupContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .signupContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
         display: flex;
         flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
     }
-    .signupContainer .top .left {
+    .signupContainer .top .right-2{
+        display: block;
         display: flex;
-        justify-content: center;
-        margin-top: 20px;
+        align-items: center;
     }
-    .signupContainer .top .right{
-        width: inherit;
-        display: flex;
-        justify-content: flex-start;
-        padding: 0 15px;
-        margin-bottom: 10px;
+    .signupContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
     }
-    .signupContainer .body{
-        display: flex;
-        flex-direction: column;
-        width: inherit;
-        height: 84vh;
+    .signupContainer .top .right-2 button:nth-of-type(2){
+        display: none;
     }
-    .signupContainer .body .left{
-        width: inherit;
-        height: 35vh;
+    .signupContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
     }
-    .signupContainer .body .left img{
+    .signupContainer .body .body-top img{
         width: inherit;
         height: inherit;
         object-fit: cover;
+        /* filter: blur(2px); */
     }
-    .signupContainer .body .right{ 
-        width: inherit;
-        height: 45vh;
+    .signupContainer .body .body-top div{
+        width: 50vw;
+        height: max-content;
+        position: absolute;
+        top: 30vh;
+        left: 21vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .signupContainer .body .body-content {
         display: flex;
         justify-content: center;
-        align-items: center;
+        padding: 5vh 0;
     }
-    .signupContainer .body .right form{
-        width: 70vw;
-        height: 40vh;
-        margin-bottom: 4vh;
+    .signupContainer .body .body-content .content {
+        width: 80vw;
+        height: max-content;
+        padding: 2vh 7.5vw;
+    }
+    .signupContainer .body .body-content .content form input {
+        width: 60vw;
+        height: 4vh;
+    
     }
     /*Media querrying the log in page*/
     .loginContainer .top {
