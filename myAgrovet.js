@@ -101,7 +101,7 @@ app.post('/signup',(req,res)=>{
     //Checking whether the input fields are filled
     if(!username||!phoneNumber||!email||!password || phoneNumber.length!=10){
         // Send error message
-        req.flash('error','Fill in your details correctly');
+        req.flash('error','Fill in all the fieldss');
         res.redirect('/signup');
         return;
     }
@@ -160,15 +160,17 @@ app.post('/signup',(req,res)=>{
 })
 //Rendering the login page
 app.get('/login',(req,res)=>{
-    res.render('login',{title:'Log in Page',errorMessage:null});
+    res.render('login',{title:'Log in Page'});
 });
 //Posting the log in page form details
 app.post('/login',(req,res)=>{
     const {username,password}=req.body;
     //Making sure both the fields are filled
     if(!username||!password){
-        const errorMessage='Kindly fill in your details';
-        return res.render('login',{title:'Log in Page', errorMessage});
+       //Send error message
+       req.flash('error','Kindly fill in the fields')
+       res.redirect('/login');
+       return;
     }
     if(username==='MOLLY'&&password==='NEVILLE'){
         res.redirect('/admin');
@@ -188,8 +190,9 @@ app.post('/login',(req,res)=>{
                     res.send('Log in successful');
                 }
                 else{
-                    const errorMessage="Invalid credentials";
-                    return res.render('login',{title:'Log in Page', errorMessage});
+                    req.flash('error','Invalid credentials')
+                    res.redirect('/login');
+                    return;
                 }
             }
         })

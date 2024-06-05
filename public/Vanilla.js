@@ -114,6 +114,27 @@ function right1_Notshowing(){
     closeTab.style.display="none";
     signup_message.style.display="block";
 }
+// Functions for showing the right1 tab in  the login page
+function right1_Show_ing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let login_message=document.querySelector('.login-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    login_message.style.display="none";
+}
+function right1_Not_showing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let login_message=document.querySelector('.login-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    login_message.style.display="block";
+}
 //Functions for the adminTabs on the admin page
 function showAdminTabs(){
     adminTabs.style.display="flex";

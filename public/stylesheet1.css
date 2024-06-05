@@ -627,127 +627,133 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #03C03C;
 }
-/*Styling the Log in page*/
-.loginContainer {
-    width: 100vw;
-    height: 99vh;
-    overflow: hidden;
+/* Styling the log in page */
+.loginContainer{
+    width: 99vw;
+    height: max-content;
 }
-.loginContainer .top{
+.loginContainer .top {
     width: inherit;
-    height: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-     background-color: #E5E4E2;
+    padding: 0 1vw;
+}
+.loginContainer .top a {
+    color: black;
 }
 .loginContainer .top .left{
-    display: flex;
-}
-.loginContainer .top .left img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.loginContainer .top .left h2{
-    display: flex;
-    align-items: center;
-}
-.loginContainer .top .right{
-    display: flex;
-    justify-content: flex-end;
-}
-.loginContainer .top .right a {
-    width: 80px;
-    height: 25px;
-    border-radius: 5px;
-    background-color: rgb(23, 222, 26);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loginContainer .body{
-    display: flex;
-    width: inherit;
-    height: 84vh;
-    background-color: #F7F7F7;
-}
-.loginContainer .body .left{
-    width: 60vw;
+    width: 18vw;
     height: inherit;
+    display: flex;
+    align-items: center;
 }
-.loginContainer .body .left img{
+.loginContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.loginContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.loginContainer .top .right-1 a {
+    font-weight: bold;
+}
+.loginContainer .top .right-2{
+    display: none;
+}
+.loginContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+}
+.loginContainer .body .body-top img{
     width: inherit;
     height: inherit;
     object-fit: cover;
+    /* filter: blur(5px); */
 }
-.loginContainer .body .right{
-    width: 40vw;
-    height: inherit;
+.loginContainer .body .body-top div{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    position: absolute;
+    top: 40vh;
+    left: 45vw;
+    padding: 3px;
+}
+.loginContainer .body .body-content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 5vh 0;
 }
-.loginContainer .body .right form{
-    width: 20vw;
-    height: 35vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2px 5px;
-    background-color: #E5E4E2;
-    border-radius: 8px;
+.loginContainer .body .body-content .content {
+    width: 50vw;
+    height: max-content;
+    padding: 2vh 7.5vw;
 }
-.loginContainer .body .right form h3 {
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.loginContainer .body .body-content .content .alert {
     display: flex;
     justify-content: center;
+    animation: fadeOut 10s forwards;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.loginContainer .body .right form input {
-    border: 1px solid;
+.loginContainer .body .body-content .content .alert-success{
+    color: #1F75FE;
 }
-.loginContainer .body .right form #main{
-    border-radius: 5px;
-    margin-left: 10px;
+.loginContainer .body .body-content .content .alert-danger{
+    color: red;
 }
-.loginContainer .body .right form div{
-    display: flex;
-    justify-content: space-between;
-}
-.loginContainer .body .right form div input{
-    position: relative;
-    top: 4px;
-}
-.loginContainer .body .right form button{
-    margin: 5px 75px;
-    width: 80px;
-    height: 20px;
+.loginContainer .body .body-content .content form {
+    padding: 1vw;
     border-radius: 10px;
-    background-color: rgb(23, 222, 26);
-    color: white;
+    box-shadow: 5px 5px 15px black;
+}
+.loginContainer .body .body-content .content form label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.loginContainer .body .body-content .content form input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
     border: none;
 }
-.loginContainer .body .right form #account{
+.loginContainer .body .body-content .content form .button {
     display: flex;
     justify-content: center;
 }
-.loginContainer .body .right form a{
+.loginContainer .body .body-content .content form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.loginContainer .body .body-content .content form p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+}
+.loginContainer .body .body-content .content form p a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: #03C03C;
-}
-.loginContainer .body .right form .errorMessage{
-    height: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loginContainer .body .right form #errorMessage{
-    height: 12px;
-    width: inherit;
-    color: red;
-    font-size: 0.7rem;
-    animation: fadeOut 5s forwards;
-    overflow: hidden;
 }
 /*Styling the admin container page*/
 .adminContainer {
@@ -1623,60 +1629,80 @@ body {
         height: 4vh;
     }
     /*Media querrying the log in page*/
+    .loginContainer {
+        width: 99vw;
+        height: max-content;
+    }
     .loginContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .loginContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .loginContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .loginContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
         display: flex;
         flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
     }
-    .loginContainer .top .left {
+    .loginContainer .top .right-2{
+        display: block;
         display: flex;
-        justify-content: center;
-        margin-top: 20px;
+        align-items: center;
     }
-    .loginContainer .top .right{
-        width: inherit;
-        display: flex;
-        justify-content: flex-start;
-        padding: 5px 15px;
-        margin-bottom: 10px;
+    .loginContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
     }
-    .loginContainer .body{
-        display: flex;
-        flex-direction: column;
-        width: inherit;
-        height: 84vh;
+    .loginContainer .top .right-2 button:nth-of-type(2){
+        display: none;
     }
-    .loginContainer .body .left{
-        width: inherit;
-        height: 35vh;
+    .loginContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
     }
-    .loginContainer .body .left img{
+    .loginContainer .body .body-top img{
         width: inherit;
         height: inherit;
         object-fit: cover;
+        /* filter: blur(2px); */
     }
-    .loginContainer .body .right{ 
-        width: inherit;
-        height: 47vh;
+    .loginContainer .body .body-top div{
+        width: 50vw;
+        height: max-content;
+        position: absolute;
+        top: 30vh;
+        left: 21vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .loginContainer .body .body-content {
         display: flex;
         justify-content: center;
-        align-items: center;
+        padding: 5vh 0;
     }
-    .loginContainer .body .right form{
-        width: 70vw;
-        height: 33vh;
-        margin-bottom: 2vh;
-        padding: 5px 0;
+    .loginContainer .body .body-content .content {
+        width: 80vw;
+        height: max-content;
+        padding: 2vh 7.5vw;
     }
-    .loginContainer .body .right form div{
-        font-size: 0.8rem;
-        width: 65vw;
-        display: flex;
-        justify-content: space-between;
-    }
-    .loginContainer .body .right form #errorMessage{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .loginContainer .body .body-content .content form input {
+        width: 60vw;
+        height: 4vh;
     }
     /*Media querying the admin page*/
      .adminContainer{

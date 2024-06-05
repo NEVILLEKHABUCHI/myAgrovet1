@@ -5,45 +5,56 @@
     <div class="loginContainer">
         <div class="top">
             <div class="left">
-                <img src="/HomepageImages/NEVOLINE_LOGO.png" alt="NEVOLINE">
-                <h2>NEVOLINE AGROVET</h2>
+                <img src="/HomepageImages/Green Plant and Agriculture Logo.png" alt="">
             </div>
-            <div class="right">
+            <div class="right-1">
                 <a href="/">HOME</a>
+                    <a href="/about">ABOUT US</a>
+                    <a href="/ourServices">OUR SERVICES</a>
+                    <a href="/ourProducts">OUR PRODUCTS</a>
+                    <a href="/signUp">SIGN UP</a>
+                    <a href="/login">LOG IN</a>
+            </div>
+            <div class="right-2">
+                <button onclick="right1_Show_ing()" id="openTab"><i class="fa-solid fa-bars"></i></button>
+                <button onclick="right1_Not_showing()" id="closeTab"><i class="fa-solid fa-x"></i></button>
             </div>
         </div>
         <div class="body">
-            <div class="left">
-                <img src="/HomepageImages/cow.jpg" alt="WELCOME TO NEVOLINE AGROVET" loading="lazy">
+            <div class="body-top">
+                <img src="/HomepageImages/cows.jpg" alt="">
+                <div class="login-message">
+                    <h1>LOG IN</h1>
+                </div>
             </div>
-            <div class="right">
-                <form action="/login" method="post">
-                    <h3>LOG IN FORM</h3>
-                    <div class="errorMessage">
-                        <% if(errorMessage){ %>
-                            <p id="errorMessage"><%=errorMessage%></p>
-                        <% } %>
-                    </div>
-                    <label for="username">
-                        USERNAME: <br>
-                        <input type="text" name="username" placeholder="Username" id="main"> <br>
-                    </label>
-                    <label for="password">
-                        PASSWORD: <br>
-                        <input type="password" name="password" placeholder="Password" id="main"> <br>
-                    </label>
-                    <div>
-                            <label for="rememberMe">
-                                <input type="checkbox">
-                                RememberMe?
-                            </label>
-                        <p><a href="">Forgot Password?</a></p>
-                    </div>
-                    <button type="submit">LOG IN</button>
-                    <p id="account">Don't have an account?<a href="/signup">Sign up</a></p>
-                </form>
+            <div class="body-content">
+                <div class="content">
+                    <%if(successMessage.length>0){ %>
+                        <div class="alert alert-success">
+                            <%=successMessage %>
+                        </div>
+                    <% } %>
+                    <%if(errorMessage.length>0){ %>
+                        <div class="alert alert-danger">
+                            <%=errorMessage %>
+                        </div>
+                    <% } %>
+                    <form action="/login" method="post">
+                        <label for="username">USERNAME</label><br>
+                        <input type="text" id="username" name="username"><br>
+    
+                        <label for="password">PASSWORD</label><br>
+                        <input type="password" id="password" name="password"><br>
+    
+                        <div class="button">
+                            <button>LOG IN</button>
+                        </div>
+                        <p>Don't have an account? <a href="">Sign up</a></p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+       </div>
+       <script src="Vanilla.js"></script>
 </body>
 </html>
