@@ -566,6 +566,27 @@ body {
     height: max-content;
     padding: 2vh 7.5vw;
 }
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.signupContainer .body .body-content .content .alert {
+    display: flex;
+    justify-content: center;
+    animation: fadeOut 10s forwards;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.signupContainer .body .body-content .content .alert-success{
+    color: #1F75FE;
+}
+.signupContainer .body .body-content .content .alert-danger{
+    color: red;
+}
 .signupContainer .body .body-content .content form {
     padding: 1vw;
     border-radius: 10px;
@@ -596,6 +617,15 @@ body {
     border-radius: 5px;
     border: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.signupContainer .body .body-content .content form p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+}
+.signupContainer .body .body-content .content form p a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #03C03C;
 }
 /*Styling the Log in page*/
 .loginContainer {
@@ -1591,7 +1621,6 @@ body {
     .signupContainer .body .body-content .content form input {
         width: 60vw;
         height: 4vh;
-    
     }
     /*Media querrying the log in page*/
     .loginContainer .top {

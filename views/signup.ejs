@@ -29,7 +29,17 @@
         </div>
         <div class="body-content">
             <div class="content">
-                <form action="">
+                <%if(successMessage.length>0){ %>
+                    <div class="alert alert-success">
+                        <%=successMessage %>
+                    </div>
+                <% } %>
+                <%if(errorMessage.length>0){ %>
+                    <div class="alert alert-danger">
+                        <%=errorMessage %>
+                    </div>
+                <% } %>
+                <form action="/signup" method="post">
                     <label for="username">USERNAME</label><br>
                     <input type="text" id="username" name="username"><br>
 
@@ -45,6 +55,7 @@
                     <div class="button">
                         <button>REGISTER</button>
                     </div>
+                    <p>Already have an account? <a href="">log in</a></p>
                 </form>
             </div>
         </div>

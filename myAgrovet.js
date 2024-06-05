@@ -93,16 +93,17 @@ app.get('/ourProducts',(req,res)=>{
 })
 //Rendering the signup page
 app.get('/signup',(req,res)=>{
-    res.render('signup',{title:'Sign up',errorMessage:null});
+    res.render('signup',{title:'Sign up'});
 });
 //Posting the signup page form details
 app.post('/signup',(req,res)=>{
     const{username,phoneNumber,email,password}=req.body;
     //Checking whether the input fields are filled
     if(!username||!phoneNumber||!email||!password || phoneNumber.length!=10){
-        const errorMessage='Fill in your details correctly';
-        console.log(errorMessage);
-        return res.render('signup',{title:'Sign up',errorMessage});
+        // Send error message
+        req.flash('error','Fill in your details correctly');
+        res.redirect('/signup');
+        return;
     }
     const query1=`SELECT * FROM signup WHERE PHONE_NUMBER=?`;
     const query2=`INSERT INTO signup(USERNAME,PHONE_NUMBER,EMAIL_ADDRESS,PASSWORD) VALUES(?,?,?,?)`;
@@ -110,13 +111,15 @@ app.post('/signup',(req,res)=>{
     db.query(query1,[phoneNumber],(error1,result1)=>{
         if(error1){
             console.log('Error checking the phone number',error1);
+            // Send error message 
+            req.flash('error','Error while registering');
             return;
         }
         if(result1.length===0){
             db.query(query2,[username,phoneNumber,email,password],(error2,result2)=>{
                 if(error2){
                     console.log('Error inserting the details in the database',error2);
-                    return;
+                    req.flash('error','Error while registering');
                 }
                 else{
                     const mailOptions={
@@ -149,8 +152,9 @@ app.post('/signup',(req,res)=>{
             })
         }
         else{
-            const errorMessage="Already registered";
-            return res.render('signup',{title:'Sign up',errorMessage});
+
+            req.flash('error', 'Already registered');
+            res.redirect('/signup');
         }
     })
 })
