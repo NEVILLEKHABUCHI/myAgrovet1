@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid; */
+}
+* a {
+    text-decoration: none;
+}
+body {
+    overflow: hidden;
+}
+/* Styling the adminContainer */
+.adminContainer{
+    width: 99vw;
+    height: 99vh;
+}
+.adminContainer .top{
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.adminContainer .top a {
+    color: black;
+}
+.adminContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.adminContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.adminContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminContainer .top .right-1 a {
+    font-weight: bold;
+}
+.adminContainer .top .right-2{
+    display: none;
+}
+.adminContainer .body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: 79vh;
+}
+.adminContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+}
+.adminContainer .body .body-top img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    /* filter: blur(5px); */
+}
+.adminContainer .body .body-top div{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    position: absolute;
+    top: 40vh;
+    left: 38vw;
+    padding: 3px;
+}
+
+/* Media querying */
+@media only screen  and (max-width:900px) {
+    /* Media querying the adminContainer */
+    .adminContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .adminContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .adminContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .adminContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .adminContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .adminContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .adminContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .adminContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .adminContainer .body .body-top img{
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        /* filter: blur(2px); */
+    }
+    .adminContainer .body .body-top div{
+        width: 50vw;
+        height: max-content;
+        position: absolute;
+        top: 30vh;
+        left: 21vw;
+        padding: 3px;
+        text-align: center;
+    }
+}

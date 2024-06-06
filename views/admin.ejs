@@ -1,66 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('./partials/header.ejs') %>
+    <%-include('./partials/adminHeader.ejs') %>
 <body>
     <div class="adminContainer">
         <div class="top">
-            <div class="topmost">
-                <h3>AGROVET ADMIN</h3>
-                <div class="right">
-                    <p><a href="">Log out</a></p>
-                    <p>Main</p>
+            <div class="left">
+                <img src="/HomepageImages/Green Plant and Agriculture Logo.png" alt="">
+            </div>
+            <div class="right-1">
+                    <a href="">DASHBOARD</a>
+                    <a href="">FEEDS</a>
+                    <a href="">DRUGS</a>
+                    <a href="">FARM MACHINERY</a>
+                    <a href="">SEEDS</a>
+            </div>
+            <div class="right-2">
+                <button onclick="right_1Showing()" id="openTab"><i class="fa-solid fa-bars"></i></button>
+                <button onclick="right_1Notshowing()" id="closeTab"><i class="fa-solid fa-x"></i></button>
+            </div>
+        </div>
+        <div class="body">
+            <div class="body-top">
+                <img src="/HomepageImages/Hare.jpg" alt="">
+                <div class="admin-message">
+                    <h1>ADMIN DASHBOARD</h1>
                 </div>
             </div>
-            <button onclick="showAdminTabs()"><i class="fa-solid fa-bars"></i></button>
-        </div>
-        <div class="center">
-            <h3>Hello, Welcome</h3>
-            <div class="centerTop">
-                <button onclick="closeAdminTabs()"><i class="fa-solid fa-x"></i></button>
-                <p><a href="/admin">DashBoard</a></p>
-                <p><a href="/adminFeeds">Feeds</a></p>
-                <p><a href="">Drugs</a></p>
-                <p><a href="">Seeds</a></p>
-                <p><a href="">Others</a></p>
-                <p><a href="">Books</a></p>
-                <p><a href="">Veterinary Doctors</a></p>
-            </div>
-        </div>
-        <div class="items">
-            <div>
-                <p><i class="fa-solid fa-cow"></i></p>
-                <p>Total Feeds</p>
-                <p>45</p>
-            </div>
-            <div>
-                <p><i class="fa-solid fa-prescription-bottle-medical"></i></p>
-                <p>Total Drugs</p>
-                <p>45</p>
-            </div>
-            <div>
-                <p><i class="fa-solid fa-seedling"></i></p>
-                <p>Total Seeds</p>
-                <p>45</p>
-            </div>
-            <div>
-                <p><i class="fa-solid fa-tractor"></i></p>
-                <p>Total Equipment</p>
-                <p>45</p>
-            </div>
-            <div>
-                <p><i class="fa-solid fa-user-doctor"></i></p>
-                <p>Total Doctors</p>
-                <p>45</p>
-            </div>
-            <div>
-                <p><i class="fa-solid fa-users"></i></p>
-                <p>Total Employees</p>
-                <p>45</p>
-            </div>
-        </div>
-        <div class="bottom">
-            <div class="bottom1"></div>
-            <div class="bottom2"></div>
         </div>
     </div>
     <script src="Vanilla.js"></script>

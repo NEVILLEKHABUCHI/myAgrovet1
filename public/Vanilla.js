@@ -135,6 +135,27 @@ function right1_Not_showing(){
     closeTab.style.display="none";
     login_message.style.display="block";
 }
+// Functions for showing  the right1 tab in the admin page
+function right_1Showing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let admin_message=document.querySelector('.admin-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    admin_message.style.display="none";
+}
+function right_1Notshowing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let admin_message=document.querySelector('.admin-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    admin_message.style.display="block";
+}
 //Functions for the adminTabs on the admin page
 function showAdminTabs(){
     adminTabs.style.display="flex";
