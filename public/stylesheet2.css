@@ -126,7 +126,7 @@ body {
         /* filter: blur(2px); */
     }
     .adminContainer .body .body-top div{
-        width: 50vw;
+        /* width: 50vw; */
         height: max-content;
         position: absolute;
         top: 30vh;
