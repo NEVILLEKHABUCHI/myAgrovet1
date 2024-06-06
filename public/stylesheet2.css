@@ -126,11 +126,11 @@ body {
         /* filter: blur(2px); */
     }
     .adminContainer .body .body-top div{
-        /* width: 50vw; */
+        width: 55vw;
         height: max-content;
         position: absolute;
         top: 30vh;
-        left: 21vw;
+        left: 26vw;
         padding: 3px;
         text-align: center;
     }
