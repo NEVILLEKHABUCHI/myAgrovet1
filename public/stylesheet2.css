@@ -202,16 +202,18 @@ body {
     padding-top: 1vh;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
+    width: 100%;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table{
     border-collapse: collapse;
-    width: 80vw;
+    width: 100%;
     border: 1px solid #228B22;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table th{
    border: 1px solid #228B22;
 }
-.adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+/* .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
     width: 15vw;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
@@ -225,7 +227,7 @@ body {
 }
 .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
     width: 15vw;
-}
+} */
 
 
 /* Media querying */
@@ -382,20 +384,25 @@ body {
         color: white;
     }
     .adminFeedsContainer .body .body-content .body-contentBody{
-        width: max-content;
+        /* width: 200vw;
         height: max-content;
         padding-top: 1vh;
         display: flex;
-        justify-content: center;
-        overflow: scroll;
+        justify-content: center; */
+        /* overflow-x: scroll; */
+        overflow-x: auto;
+        white-space: nowrap;
+        /* max-width: 100%; */
     }
     .adminFeedsContainer .body .body-content .body-contentBody table{
         border-collapse: collapse;
-        width: max-content;
+        /* width: 100%; */
+        padding-left: 5vw;
         border: 1px solid #228B22;
+        /* overflow-x: scroll; */
     }
-    .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
-        width: 30vw;
+    /* .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+        width: 50vw;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
         width: 50vw;
@@ -408,5 +415,5 @@ body {
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
         width: 15vw;
-    }
+    } */
 }
