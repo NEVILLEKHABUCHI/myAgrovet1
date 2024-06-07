@@ -104,6 +104,100 @@ body {
     display: flex;
     justify-content: center;
 }
+.adminContainer .body .body-content .content .content-body div p span {
+    color: #228B22;
+}
+/* Styling the adminFeeds page */
+.adminFeedsContainer{
+    width: 99vw;
+    height: 99vh;
+}
+.adminFeedsContainer .top{
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.adminFeedsContainer .top a {
+    color: black;
+}
+.adminFeedsContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.adminFeedsContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.adminFeedsContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminFeedsContainer .top .right-1 a {
+    font-weight: bold;
+}
+.adminFeedsContainer .top .right-2{
+    display: none;
+}
+.adminFeedsContainer .body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: 79vh;
+}
+.adminFeedsContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+    background-image: url('/HomepageImages/Hare.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminFeedsContainer .body .body-top div{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    padding: 3px;
+}
+.adminFeedsContainer .body .body-content .body-contentTop{
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminFeedsContainer .body .body-content .body-contentTop div{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+.adminFeedsContainer .body .body-content .body-contentTop div h3 {
+    color: #228B22;
+    border: 1px solid #228B22;
+}
+.adminFeedsContainer .body .body-content .body-contentTop form input{
+    width: 30vw;
+    height: 5vh;
+    border: 1.5px solid #228B22;
+    border-radius: 5px;
+}
+.adminFeedsContainer .body .body-content .body-contentTop form button{
+    padding: 0.5vw;
+    border: none;
+    border-radius: 2px;
+    background-color: #228B22;
+    color: white;
+}
 
 /* Media querying */
 @media only screen  and (max-width:900px) {
@@ -146,15 +240,12 @@ body {
     .adminContainer .top .right-2 button:nth-of-type(2){
         display: none;
     }
+    .adminContainer .body {
+        height: 89vh;
+    }
     .adminContainer .body .body-top {
         width: 99vw;
         height: 50vh;
-    }
-    .adminContainer .body .body-top img{
-        width: inherit;
-        height: inherit;
-        object-fit: cover;
-        /* filter: blur(2px); */
     }
     .adminContainer .body .body-top div{
         width: 55vw;
@@ -179,5 +270,83 @@ body {
         height: max-content;
         border-radius: 10px;
         box-shadow: 5px 5px 15px black;
+    }
+
+    /* Media querying the adminFeeds page */
+    .adminFeedsContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .adminFeedsContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .adminFeedsContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .adminFeedsContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .adminFeedsContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .adminFeedsContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .adminFeedsContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .adminFeedsContainer .body {
+        height: 89vh;
+    }
+    .adminFeedsContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .adminFeedsContainer .body .body-top div{
+        width: 55vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .adminFeedsContainer .body .body-content .body-contentTop{
+        margin-top: 2vh;
+        width: inherit;
+        height: 7vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentTop div{
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentTop form input{
+        width: 70vw;
+        height: 3vh;
+        border: 1.5px solid #228B22;
+        border-radius: 5px;
+    }
+    .adminFeedsContainer .body .body-content .body-contentTop form button{
+        padding: 0.5vw;
+        border: none;
+        border-radius: 2px;
+        background-color: #228B22;
+        color: white;
     }
 }

@@ -8,8 +8,8 @@
                 <img src="/HomepageImages/Green Plant and Agriculture Logo.png" alt="">
             </div>
             <div class="right-1">
-                    <a href="">DASHBOARD</a>
-                    <a href="">FEEDS</a>
+                    <a href="/admin">DASHBOARD</a>
+                    <a href="/adminFeeds">FEEDS</a>
                     <a href="">DRUGS</a>
                     <a href="">FARM MACHINERY</a>
                     <a href="">SEEDS</a>
@@ -32,7 +32,7 @@
                             <div>
                                 <h2>ANIMAL DRUGS</h2>
                                 <br>
-                                <p>Total Drugs = <span></span></p>
+                                <p>Total Drugs = <span><%=categoryCounts.Drugs || 0 %></span></p>
                                 <p>Total purchased = <span></span></p>
                                 <p>Running out of stock = <span></span></p>
 
@@ -43,7 +43,7 @@
                             <div>
                                 <h2>ANIMAL FEEDS</h2>
                                 <br>
-                                <p>Total Feeds = <span></span></p>
+                                <p>Total Feeds = <span><%=categoryCounts.Feeds || 0 %></span></p>
                                 <p>Total purchased = <span></span></p>
                                 <p>Running out of stock = <span></span></p>
 
@@ -54,7 +54,7 @@
                             <div>
                                 <h2>FARM MACHINERY</h2>
                                 <br>
-                                <p>Total Machinery = <span></span></p>
+                                <p>Total Machinery = <span><%=categoryCounts.Machinery || 0%></span></p>
                                 <p>Total purchased = <span></span></p>
                                 <p>Running out of stock = <span></span></p>
 
@@ -65,7 +65,7 @@
                             <div>
                                 <h2>SEEDS</h2>
                                 <br>
-                                <p>Total Seeds = <span></span></p>
+                                <p>Total Seeds = <span><%=categoryCounts.Seeds || 0%></span></p>
                                 <p>Total purchased = <span></span></p>
                                 <p>Running out of stock = <span></span></p>
 

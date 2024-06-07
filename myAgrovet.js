@@ -199,8 +199,21 @@ app.post('/login',(req,res)=>{
     }
 })
 //Rendering the admin page
-app.get('/admin',(req,res)=>{
-    res.render('admin',{title:'Admin page'});
+app.get('/admin',async(req,res)=>{
+    // res.render('admin',{title:'Admin page'});
+    try{
+        const productCounts=await Product.aggregate([
+            {$group:{_id:'$productCategory',count:{$sum:1}}}
+        ]);
+        const categoryCounts=productCounts.reduce((acc,item)=>{
+            acc[item._id]=item.count;
+            return acc;
+        },{});
+        res.render('admin',{title:'Admin page',categoryCounts});
+    }catch(err){
+        console.error(err);
+        res.status(500).send('Server error');
+    }
 });
 //Product schema for the products collection in mongoDB
 const productSchema=new mongoose.Schema({

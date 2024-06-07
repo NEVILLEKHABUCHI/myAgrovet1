@@ -156,6 +156,28 @@ function right_1Notshowing(){
     closeTab.style.display="none";
     admin_message.style.display="block";
 }
+
+// Functions for showing the right1 tab on the adminFeeds page
+function ri_ght1Showing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminFeeds_message=document.querySelector('.adminFeeds-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    adminFeeds_message.style.display="none";
+}
+function ri_ght1Notshowing(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminFeeds_message=document.querySelector('.adminFeeds-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    adminFeeds_message.style.display="block";
+}
 //Functions for the adminTabs on the admin page
 function showAdminTabs(){
     adminTabs.style.display="flex";
