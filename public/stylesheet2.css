@@ -198,10 +198,42 @@ body {
     background-color: #228B22;
     color: white;
 }
+.adminFeedsContainer .body .body-content .body-contentBody{
+    padding-top: 1vh;
+    display: flex;
+    justify-content: center;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table{
+    border-collapse: collapse;
+    width: 80vw;
+    border: 1px solid #228B22;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table th{
+   border: 1px solid #228B22;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+    width: 15vw;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+    width: 30vw;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+    width: 10vw;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+    width: 10vw;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+    width: 15vw;
+}
+
 
 /* Media querying */
 @media only screen  and (max-width:900px) {
     /* Media querying the adminContainer */
+    body{
+        overflow-x: scroll;
+    }
     .adminContainer .top {
         width: inherit;
         height: 10vh;
@@ -348,5 +380,33 @@ body {
         border-radius: 2px;
         background-color: #228B22;
         color: white;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody{
+        width: max-content;
+        height: max-content;
+        padding-top: 1vh;
+        display: flex;
+        justify-content: center;
+        overflow: scroll;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table{
+        border-collapse: collapse;
+        width: max-content;
+        border: 1px solid #228B22;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+        width: 30vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+        width: 50vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+        width: 40vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+        width: 10vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+        width: 15vw;
     }
 }
