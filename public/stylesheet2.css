@@ -203,7 +203,9 @@ body {
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table{
     border-collapse: collapse;
@@ -392,14 +394,18 @@ body {
         /* overflow-x: scroll; */
         overflow-x: auto;
         white-space: nowrap;
-        /* max-width: 100%; */
+        max-width: 100%;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table{
         border-collapse: collapse;
-        /* width: 100%; */
-        padding-left: 5vw;
+        width: 100%;
+        /* padding-left: 5vw; */
         border: 1px solid #228B22;
         /* overflow-x: scroll; */
+    }
+    th,td{
+        padding: 8px;
+        box-sizing: border-box;
     }
     /* .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
         width: 50vw;
