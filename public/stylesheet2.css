@@ -204,12 +204,13 @@ body {
     justify-content: center;
     overflow-x: hidden;
     box-sizing: border-box;
-    padding-bottom: 1vh;
+    padding-bottom: 4vh;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table{
     border-collapse: collapse;
     width: 80vw;
     border: 1px solid #228B22;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table th,td{
    border: 1px solid #228B22;
@@ -238,7 +239,18 @@ body {
     height: 12vh;
     object-fit: cover;
 }
-
+.adminFeedsContainer .body .body-content .body-contentBody table tr td button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.2vw;
+    border: none;
+    color: white;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr td button:first-of-type{
+    background-color: #228B22;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr td button:nth-of-type(2){
+    background-color: red;
+}
 
 /* Media querying */
 @media only screen  and (max-width:900px) {
@@ -396,6 +408,7 @@ body {
     .adminFeedsContainer .body .body-content .body-contentBody{
         overflow-x: auto;
         white-space: nowrap;
+        padding-bottom: 5vh;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table{
         border-collapse: collapse;
