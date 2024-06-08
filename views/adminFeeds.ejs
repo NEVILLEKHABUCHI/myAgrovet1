@@ -45,9 +45,18 @@
                             <th>QUANTITY</th>
                             <th>ACTION</th>
                         </tr>
+                       <% Feeds.forEach((Feed)=>{ %>
                         <tr>
-                            <td>wbnma,fhjklgjkfrlegjnrkwel</td>
+                            <td><img src="data:image/png;base64,<%=Feed.productImage%>" alt=""></td>
+                            <td><%=Feed.productName %></td>
+                            <td><%=Feed.productPrice %></td>
+                            <td><%=Feed.productQuantity %></td>
+                            <td>
+                                <button>EDIT</button>
+                                <button>DELETE</button>
+                            </td>
                         </tr>
+                        <% }) %>
                     </table>
                 </div>
             </div>

@@ -229,6 +229,15 @@ body {
 .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
     width: 15vw;
 }
+.adminFeedsContainer .body .body-content .body-contentBody table tr td{
+    text-align: center;
+    padding: 0.5vw;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table tr td img {
+    width: 12vw;
+    height: 12vh;
+    object-fit: cover;
+}
 
 
 /* Media querying */
@@ -419,5 +428,10 @@ body {
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
         width: 30vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr td img {
+        width: 30vw;
+        height: 15vh;
+        object-fit: cover;
     }
 }
