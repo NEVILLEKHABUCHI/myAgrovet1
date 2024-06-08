@@ -203,19 +203,18 @@ body {
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-    max-width: 100%;
-    white-space: nowrap;
     box-sizing: border-box;
+    padding-bottom: 1vh;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table{
     border-collapse: collapse;
-    width: 100%;
+    width: 80vw;
     border: 1px solid #228B22;
 }
-.adminFeedsContainer .body .body-content .body-contentBody table th{
+.adminFeedsContainer .body .body-content .body-contentBody table th,td{
    border: 1px solid #228B22;
 }
-/* .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+.adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
     width: 15vw;
 }
 .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
@@ -229,7 +228,7 @@ body {
 }
 .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
     width: 15vw;
-} */
+}
 
 
 /* Media querying */
@@ -386,40 +385,39 @@ body {
         color: white;
     }
     .adminFeedsContainer .body .body-content .body-contentBody{
-        /* width: 200vw;
-        height: max-content;
-        padding-top: 1vh;
-        display: flex;
-        justify-content: center; */
-        /* overflow-x: scroll; */
         overflow-x: auto;
         white-space: nowrap;
-        max-width: 100%;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table{
         border-collapse: collapse;
-        width: 100%;
-        /* padding-left: 5vw; */
+        width: 200vw;
         border: 1px solid #228B22;
-        /* overflow-x: scroll; */
+        table-layout: fixed;
+        margin-left: 106vw;
+        margin-right: 2vw;
     }
     th,td{
-        padding: 8px;
+        padding: 5px;
         box-sizing: border-box;
     }
-    /* .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
-        width: 50vw;
+    td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid #228B22;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+        width: 35vw;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
-        width: 50vw;
+        width: 75vw;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
-        width: 40vw;
+        width: 30vw;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
-        width: 10vw;
+        width: 30vw;
     }
     .adminFeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
-        width: 15vw;
-    } */
+        width: 30vw;
+    }
 }
