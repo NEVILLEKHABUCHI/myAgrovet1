@@ -251,6 +251,55 @@ body {
 .adminFeedsContainer .body .body-content .body-contentBody table tr td button:nth-of-type(2){
     background-color: red;
 }
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail {
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    text-align: start;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail #close{
+    background-color: rgb(0, 0, 0,85%);
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail p button{
+    font-size: 1.5rem;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail div form {
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminFeedsContainer .body .body-content .body-contentBody table .productDetail div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 /* Media querying */
 @media only screen  and (max-width:900px) {
@@ -417,6 +466,7 @@ body {
         table-layout: fixed;
         margin-left: 106vw;
         margin-right: 2vw;
+        margin-bottom: 5vh;
     }
     th,td{
         padding: 5px;
@@ -446,5 +496,17 @@ body {
         width: 30vw;
         height: 15vh;
         object-fit: cover;
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table .productDetail {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+        
+    }
+    .adminFeedsContainer .body .body-content .body-contentBody table .productDetail div form  input {
+        width: 70vw;
+        height: 4vh;
     }
 }
