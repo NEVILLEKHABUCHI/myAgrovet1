@@ -162,10 +162,31 @@ body {
     justify-content: center;
     align-items: center;
 }
-.adminFeedsContainer .body .body-top div{
+.adminFeedsContainer .body .body-top .adminFeeds-message{
     height: max-content;
     background-color: rgb(255, 255, 255,70%);
     padding: 3px;
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.adminFeedsContainer .body .body-top .adminFeeds-message .alert {
+    display: flex;
+    justify-content: center;
+    animation: fadeOut 10s forwards;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminFeedsContainer .body .body-top .adminFeeds-message .alert-success{
+    color: #1F75FE;
+}
+.adminFeedsContainer .body .body-top .adminFeeds-message .alert-danger{
+    color: red;
 }
 .adminFeedsContainer .body .body-content .body-contentTop{
     width: inherit;

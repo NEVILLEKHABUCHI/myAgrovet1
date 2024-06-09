@@ -23,6 +23,16 @@
             <div class="body-top">
                 <div class="adminFeeds-message">
                     <h1>ADMIN FEEDS</h1>
+                    <%if(successMessage.length>0){ %>
+                        <div class="alert alert-success">
+                            <%=successMessage %>
+                        </div>
+                    <% } %>
+                    <%if(errorMessage.length>0){ %>
+                        <div class="alert alert-danger">
+                            <%=errorMessage %>
+                        </div>
+                    <% } %>
                 </div>
             </div>
             <div class="body-content">
@@ -56,21 +66,22 @@
                                 <div class="productDetail" id="detail-<%=Feed._id %>">
                                     <p><button id="close"><i class="fa-solid fa-x"></i></button></p>
                                     <div>
-                                        <form action="">
-                                            <label for="image-<%=Feed._id %>">FEED IMAGE</label><br>
-                                            <input type="file" id="image-<%=Feed._id %>" name="image-<%=Feed._id %>" value="<%=Feed.productImage %>"><br>
+                                        <form action="/products/<%=Feed._id %>/edit" method="post" enctype="multipart/form-data">
+                                            <label for="image">FEED IMAGE</label><br>
+                                            <input type="file" id="image" name="productImage" value="<%=Feed.productImage %>"><br>
         
-                                            <label for="name-<%=Feed._id %>">FEED NAME</label><br>
-                                            <input type="text" id="name-<%=Feed._id %>" name="name-<%=Feed._id %>" value="<%=Feed.productName %>"><br>
+                                            <label for="name">FEED NAME</label><br>
+                                            <input type="text" id="name" name="productName" value="<%=Feed.productName %>"><br>
         
-                                            <label for="price-<%=Feed._id %>">FEED PRICE</label><br>
-                                            <input type="text" id="price-<%=Feed._id %>" name="price-<%=Feed._id %>" value="<%=Feed.productPrice %>"><br>
+                                            <label for="price">FEED PRICE</label><br>
+                                            <input type="text" id="price" name="productPrice" value="<%=Feed.productPrice %>"><br>
         
-                                            <label for="quantity-<%=Feed._id %>">FEED QUANTITY</label><br>
-                                            <input type="text" id="quantity-<%=Feed._id %>" name="quantity-<%=Feed._id %>" value="<%=Feed.productQuantity %>"><br>
+                                            <label for="quantity">FEED QUANTITY</label><br>
+                                            <input type="text" id="quantity" name="productQuantity" value="<%=Feed.productQuantity %>"><br>
+
 
                                             <div class="button">
-                                                <button>EDIT PRODUCT</button>
+                                                <button type="submit">EDIT PRODUCT</button>
                                             </div>
                                         </form>
                                     </div>
