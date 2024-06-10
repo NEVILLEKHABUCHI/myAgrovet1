@@ -585,4 +585,20 @@ body {
         width: 70vw;
         height: 4vh;
     }
+    .adminFeedsContainer .body .body-content .body-contentTop .addFeed {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+    }
+    .adminFeedsContainer .body .body-content .body-contentTop .addFeed div form {
+        width: 80vw;
+     
+    }
+  
+    .adminFeedsContainer .body .body-content .body-contentTop .addFeed div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
 }
