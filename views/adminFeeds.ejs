@@ -38,13 +38,37 @@
             <div class="body-content">
                 <div class="body-contentTop">
                     <div>
-                        <h3>ADD FEED</h3>
+                        <button onclick="showAddFeed()"><h3>ADD FEED</h3></button>
                         <h3>HISTORY</h3>
                     </div>
                     <form action="">
                         <input type="text" name="query" placeholder="Search for products">
                         <button type="submit">Search</button>
                     </form>
+                    <div class="addFeed">
+                        <p><button id="close"><i class="fa-solid fa-x"></i></button></p>
+                        <div>
+                            <form action="/addProduct" method="post" enctype="multipart/form-data">
+                                <label for="image">FEED IMAGE</label><br>
+                                <input type="file" id="productImage" name="productImage"><br>
+
+                                <label for="name">FEED NAME</label><br>
+                                <input type="text" id="productName" name="productName"><br>
+
+                                <label for="price">FEED PRICE</label><br>
+                                <input type="text" id="productPrice" name="productPrice"><br>
+
+                                <label for="quantity">FEED QUANTITY</label><br>
+                                <input type="text" id="productQuantity" name="productQuantity"><br>
+
+                                <input type="hidden" id="productCategory" name="productCategory" value="Feeds">
+
+                                <div class="button">
+                                    <button type="submit">ADD PRODUCT</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="body-contentBody">
                     <table>
@@ -86,7 +110,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <button>DELETE</button>
+                                <button onclick="confirmDelete('<%=Feed._id %>')">DELETE</button>
                             </td>
                         </tr>
                

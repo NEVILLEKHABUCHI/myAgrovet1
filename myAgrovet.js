@@ -240,25 +240,30 @@ app.get('/adminFeeds',async(req,res)=>{
 //Posting the new added item from the adminFeeds form
 app.post('/addProduct',upload.single('productImage'),async(req,res)=>{
     try{
-        //Convert image buffer to Base64 string
-        const base64Image=req.file.buffer.toString('base64');
-        //Create new product object
-        const newProduct=new Product({
-            productImage:base64Image,//Store image as Base64 string
-            productName:req.body.productName,
-            productPrice:req.body.productPrice,
-            productQuantity:req.body.productQuantity,
-            productCategory:req.body.productCategory
-        });
-        //Save product to database
-        await newProduct.save();
-        //Set succcess message
-        req.flash('success','Product added successfully');
-        res.redirect('/adminFeeds');
+        const {productName,productPrice,productQuantity,productCategory}=req.body;
+        const productImage=req.file.buffer.toString('base64');
+    
+        // Validate form inputs
+        if(!productImage||!productName||!productPrice||!productQuantity||!productCategory){
+            // Send error message
+            req.flash('error','Kindly fill all the fields');
+            return;
+        }
+        else{
+            const newProduct=new Product({
+                productImage,
+                productName,
+                productPrice,
+                productQuantity,
+                productCategory
+            });
+            await newProduct.save();
+            req.flash('success','Product added successfully');
+            res.redirect('/adminFeeds');
+        }
     }catch(err){
-        console.error(err);
-        //Set error message
-        req.flash('error','Failed to add product');
+        console.error('Error while adding the product',err);
+        req.flash('error','Error while adding the product');
         res.redirect('/adminFeeds');
     }
 });
@@ -287,20 +292,35 @@ app.post('/products/:id/edit',upload.single('productImage'),async(req,res)=>{
     }
 });
 
-//Route to handle delete operation for a specific product
-app.post('/deleteProduct',async(req,res)=>{
+// Route to handle product deletion
+app.get('/products/:id/delete',async(req,res)=>{
     try{
-        const productId=req.body.productId;
-        //Delete the product from the database using the product ID
-        await Product.findByIdAndDelete(productId);
-        //Send success message
-        req.flash('success','Product Deleted successfully');
-        //Redirect to the route that renders the adminFeeds page
+        await Product.findByIdAndDelete(req.params.id);
+        // Send success message
+        req.flash('success','Product deleted Successfully');
         res.redirect('/adminFeeds');
-    }catch(err){
-        console.error('Error deleting product:',err);
-        //Send error message
-        req.flash('error','Failed to delete the product');
+    }
+    catch(err){
+        // Send error message
+        req.flash('error','Failed to update the product');
         res.redirect('/adminFeeds');
     }
 })
+
+//Route to handle delete operation for a specific product
+// app.post('/deleteProduct',async(req,res)=>{
+//     try{
+//         const productId=req.body.productId;
+//         //Delete the product from the database using the product ID
+//         await Product.findByIdAndDelete(productId);
+//         //Send success message
+//         req.flash('success','Product Deleted successfully');
+//         //Redirect to the route that renders the adminFeeds page
+//         res.redirect('/adminFeeds');
+//     }catch(err){
+//         console.error('Error deleting product:',err);
+//         //Send error message
+//         req.flash('error','Failed to delete the product');
+//         res.redirect('/adminFeeds');
+//     }
+// })

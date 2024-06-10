@@ -202,6 +202,10 @@ body {
     justify-content: space-between;
     width: 50vw;
 }
+.adminFeedsContainer .body .body-content .body-contentTop div button{
+    border: none;
+    background-color: white;
+}
 .adminFeedsContainer .body .body-content .body-contentTop div h3 {
     color: #228B22;
     border: 1px solid #228B22;
@@ -218,6 +222,57 @@ body {
     border-radius: 2px;
     background-color: #228B22;
     color: white;
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed {
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    /* text-align: start; */
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed #close{
+    background-color: rgb(0, 0, 0,85%);
+    color: white;
+    font-size: 1.5rem;
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed div {
+    width: inherit;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed div form {
+    width: 35vw;
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminFeedsContainer .body .body-content .body-contentTop .addFeed div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .adminFeedsContainer .body .body-content .body-contentBody{
     padding-top: 1vh;
