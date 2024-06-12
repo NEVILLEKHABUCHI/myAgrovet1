@@ -915,6 +915,276 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* Styling the adminSeeds page */
+.adminSeedsContainer{
+    width: 99vw;
+    height: 99vh;
+}
+.adminSeedsContainer .top{
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.adminSeedsContainer .top a {
+    color: black;
+}
+.adminSeedsContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.adminSeedsContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.adminSeedsContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminSeedsContainer .top .right-1 a {
+    font-weight: bold;
+}
+.adminSeedsContainer .top .right-2{
+    display: none;
+}
+.adminSeedsContainer .body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: 79vh;
+}
+.adminSeedsContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+    background-image: url('/HomepageImages/Hare.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminSeedsContainer .body .body-top .adminSeeds-message{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    padding: 3px;
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.adminSeedsContainer .body .body-top .adminSeeds-message .alert {
+    display: flex;
+    justify-content: center;
+    animation: fadeOut 10s forwards;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminSeedsContainer .body .body-top .adminSeeds-message .alert-success{
+    color: #1F75FE;
+}
+.adminSeedsContainer .body .body-top .adminSeeds-message .alert-danger{
+    color: red;
+}
+.adminSeedsContainer .body .body-content .body-contentTop{
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminSeedsContainer .body .body-content .body-contentTop div{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+.adminSeedsContainer .body .body-content .body-contentTop div button{
+    border: none;
+    background-color: white;
+}
+.adminSeedsContainer .body .body-content .body-contentTop div h3 {
+    color: #228B22;
+    border: 1px solid #228B22;
+}
+.adminSeedsContainer .body .body-content .body-contentTop form input{
+    width: 30vw;
+    height: 5vh;
+    border: 1.5px solid #228B22;
+    border-radius: 5px;
+}
+.adminSeedsContainer .body .body-content .body-contentTop form button{
+    padding: 0.5vw;
+    border: none;
+    border-radius: 2px;
+    background-color: #228B22;
+    color: white;
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed{
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    /* text-align: start; */
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed #close{
+    background-color: rgb(0, 0, 0,85%);
+    color: white;
+    font-size: 1.5rem;
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed div {
+    width: inherit;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed div form {
+    width: 35vw;
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminSeedsContainer .body .body-content .body-contentTop .addSeed div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminSeedsContainer .body .body-content .body-contentBody{
+    padding-top: 1vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding-bottom: 4vh;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table{
+    border-collapse: collapse;
+    width: 80vw;
+    border: 1px solid #228B22;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table th,td{
+   border: 1px solid #228B22;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+    width: 15vw;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+    width: 30vw;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+    width: 10vw;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+    width: 10vw;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+    width: 15vw;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr td{
+    text-align: center;
+    padding: 0.5vw;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr td img {
+    width: 12vw;
+    height: 12vh;
+    object-fit: cover;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr td button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.2vw;
+    border: none;
+    color: white;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr td button:first-of-type{
+    background-color: #228B22;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table tr td button:nth-of-type(2){
+    background-color: red;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail {
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    text-align: start;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail #close{
+    background-color: rgb(0, 0, 0,85%);
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail p button{
+    font-size: 1.5rem;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail div form {
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminSeedsContainer .body .body-content .body-contentBody table .productDetail div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 /* Media querying */
 @media only screen  and (max-width:900px) {
     /* Media querying the adminContainer */
@@ -1434,6 +1704,155 @@ body {
     }
   
     .adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
+    
+    /* Media querying the adminSeeds page */
+    .adminSeedsContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .adminSeedsContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .adminSeedsContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .adminSeedsContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .adminSeedsContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .adminSeedsContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .adminSeedsContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .adminSeedsContainer .body {
+        height: 89vh;
+    }
+    .adminSeedsContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .adminSeedsContainer .body .body-top div{
+        width: 55vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .adminSeedsContainer .body .body-content .body-contentTop{
+        margin-top: 2vh;
+        width: inherit;
+        height: 7vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentTop div{
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentTop form input{
+        width: 70vw;
+        height: 3vh;
+        border: 1.5px solid #228B22;
+        border-radius: 5px;
+    }
+    .adminSeedsContainer .body .body-content .body-contentTop form button{
+        padding: 0.5vw;
+        border: none;
+        border-radius: 2px;
+        background-color: #228B22;
+        color: white;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody{
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5vh;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table{
+        border-collapse: collapse;
+        width: 200vw;
+        border: 1px solid #228B22;
+        table-layout: fixed;
+        margin-left: 106vw;
+        margin-right: 2vw;
+        margin-bottom: 5vh;
+    }
+    th,td{
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid #228B22;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+        width: 35vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+        width: 75vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+        width: 30vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+        width: 30vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+        width: 30vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table tr td img {
+        width: 30vw;
+        height: 15vh;
+        object-fit: cover;
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table .productDetail {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+        
+    }
+    .adminSeedsContainer .body .body-content .body-contentBody table .productDetail div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
+    .adminSeedsContainer .body .body-content .body-contentTop .addSeed {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+    }
+    .adminSeedsContainer .body .body-content .body-contentTop .addSeed div form {
+        width: 80vw;
+     
+    }
+  
+    .adminSeedsContainer .body .body-content .body-contentTop .addSeed div form  input {
         width: 70vw;
         height: 4vh;
     }

@@ -464,3 +464,82 @@ app.get('/machinery/:id/delete',async(req,res)=>{
         res.redirect('/adminMachinery');
     }
 })
+
+// Rendering the adminSeeds page
+app.get('/adminSeeds',async(req,res)=>{
+    try{
+        //Query the database to fetch drug details
+        const products=await Product.find({productCategory: 'Seed'});
+        res.render('adminSeeds',{title:'Admin Seeds',Seeds:products});
+        }catch(error){
+         console.error('Error fetching seeds from the database',error);
+            res.send('Something went wrong while opening the adminSeeds page');
+        }
+});
+// Route to handle addSeed from the adminSeed page
+app.post('/addSeed',upload.single('productImage'),async(req,res)=>{
+    try{
+        const {productName,productPrice,productQuantity,productCategory}=req.body;
+        const productImage=req.file.buffer.toString('base64');
+    
+        // Validate form inputs
+        if(!productImage||!productName||!productPrice||!productQuantity||!productCategory){
+            // Send error message
+            req.flash('error','Kindly fill all the fields');
+            return;
+        }
+        else{
+            const newProduct=new Product({
+                productImage,
+                productName,
+                productPrice,
+                productQuantity,
+                productCategory
+            });
+            await newProduct.save();
+            req.flash('success','Product added successfully');
+            res.redirect('/adminSeeds');
+        }
+    }catch(err){
+        console.error('Error while adding the product',err);
+        req.flash('error','Error while adding the product');
+        res.redirect('/adminSeeds');
+    }
+});
+//Route to handle form submission of the editted product and update the product on the adminDrugs page
+app.post('/seeds/:id/edit',upload.single('productImage'),async(req,res)=>{
+    const {productName,productPrice,productQuantity,productCategory}=req.body;
+    const updateData={productName,productPrice,productQuantity,productCategory};
+
+    if(req.file){
+        updateData.productImage=req.file.buffer.toString('base64');
+    }
+
+    try{
+        await Product.findByIdAndUpdate(req.params.id,updateData);
+        //Send success message
+        req.flash('success','Product updated Successfully');
+        //Redirect to the route that renders the adminFeeds page
+        res.redirect('/adminSeeds');
+    }
+    catch(err){
+        //Send error message
+        console.error(err);
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminSeeds');
+    }
+});
+// Route to handle drug deletion in the adminDrugs page
+app.get('/seed/:id/delete',async(req,res)=>{
+    try{
+        await Product.findByIdAndDelete(req.params.id);
+        // Send success message
+        req.flash('success','Product deleted Successfully');
+        res.redirect('/adminSeeds');
+    }
+    catch(err){
+        // Send error message
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminSeeds');
+    }
+})

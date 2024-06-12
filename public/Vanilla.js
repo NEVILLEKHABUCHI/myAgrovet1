@@ -289,7 +289,7 @@ function closeadminMachineryRight1tab(){
     adminMachineries_message.style.display="block";
 }
 
-//Functions for the add New Item on the admin Feeds page
+//Functions for the add New Item on the adminMachinery page
 function showAddMachinery(){
     let addmachineryDiv=document.querySelector('.addMachinery');
     if(addmachineryDiv.style.display==='none' || addmachineryDiv.style.display===''){
@@ -313,8 +313,63 @@ function hideDetails(productId){
     detailDiv.style.display='none';
 }
 
-//Functions to delete a product in the adminFeeds page
+//Functions to delete a product in the adminMachinery page
 function confirmDeleteMachinery(productId){
     if(confirm('Are you sure you want to delete this product?')){
         window.location.href='/machinery/'+productId+'/delete';
-    }}
+    }
+}
+
+// Functions for the adminSeeds page
+// Functions for showing the right1 tab on the adminFeeds page
+function showadminSeedsRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminSeeds_message=document.querySelector('.adminSeeds-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    adminSeeds_message.style.display="none";
+}
+function closeadminSeedsRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminSeeds_message=document.querySelector('.adminSeeds-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    adminSeeds_message.style.display="block";
+}
+
+//Functions for the add New Item on the adminMachinery page
+function showAddSeed(){
+    let addseedDiv=document.querySelector('.addSeed');
+    if(addseedDiv.style.display==='none' || addseedDiv.style.display===''){
+        addseedDiv.style.display='block';
+    }
+    else{
+        addseedDiv.style.display='none';
+    }
+}
+function showDetails(productId){
+    let detailDiv=document.getElementById('detail-'+productId);
+    if(detailDiv.style.display==='none' || detailDiv.style.display===''){
+        detailDiv.style.display='block';
+    }
+    else{
+        detailDiv.style.display='none';
+    }
+}
+function hideDetails(productId){
+    let detailDiv=document.getElementById('detail-'+productId);
+    detailDiv.style.display='none';
+}
+
+//Functions to delete a product in the adminMachinery page
+function confirmDeleteSeed(productId){
+    if(confirm('Are you sure you want to delete this product?')){
+        window.location.href='/seed/'+productId+'/delete';
+    }
+}
