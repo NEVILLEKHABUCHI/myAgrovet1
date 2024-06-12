@@ -2,7 +2,7 @@
 <html lang="en">
     <%-include('./partials/adminHeader.ejs') %>
 <body>
-    <div class="adminFeedsContainer">
+    <div class="adminMachineriesContainer">
         <div class="top">
             <div class="left">
                 <img src="/HomepageImages/Green Plant and Agriculture Logo.png" alt="">
@@ -15,14 +15,14 @@
                     <a href="/adminSeeds">SEEDS</a>
             </div>
             <div class="right-2">
-                <button onclick="ri_ght1Showing()" id="openTab"><i class="fa-solid fa-bars"></i></button>
-                <button onclick="ri_ght1Notshowing()" id="closeTab"><i class="fa-solid fa-x"></i></button>
+                <button onclick="showadminMachineryRight1tab()" id="openTab"><i class="fa-solid fa-bars"></i></button>
+                <button onclick="closeadminMachineryRight1tab()" id="closeTab"><i class="fa-solid fa-x"></i></button>
             </div>
         </div>
         <div class="body">
             <div class="body-top">
-                <div class="adminFeeds-message">
-                    <h1>ADMIN FEEDS</h1>
+                <div class="adminMachineries-message">
+                    <h1>ADMIN MACHINERY</h1>
                     <%if(successMessage.length>0){ %>
                         <div class="alert alert-success">
                             <%=successMessage %>
@@ -38,30 +38,30 @@
             <div class="body-content">
                 <div class="body-contentTop">
                     <div>
-                        <button onclick="showAddFeed()"><h3>ADD FEED</h3></button>
+                        <button onclick="showAddMachinery()"><h3>ADD MACHINERY</h3></button>
                         <h3>HISTORY</h3>
                     </div>
                     <form action="" method="">
                         <input type="text" name="query" placeholder="Search for products">
                         <button type="submit">Search</button>
                     </form>
-                    <div class="addFeed">
+                    <div class="addMachinery">
                         <p><button id="close"><i class="fa-solid fa-x"></i></button></p>
                         <div>
-                            <form action="/addFeed" method="post" enctype="multipart/form-data">
-                                <label for="image">FEED IMAGE</label><br>
+                            <form action="/addMachinery" method="post" enctype="multipart/form-data">
+                                <label for="image">MACHINERY IMAGE</label><br>
                                 <input type="file" id="productImage" name="productImage"><br>
 
-                                <label for="name">FEED NAME</label><br>
+                                <label for="name">MACHINERY NAME</label><br>
                                 <input type="text" id="productName" name="productName"><br>
 
-                                <label for="price">FEED PRICE</label><br>
+                                <label for="price">MACHINERY PRICE</label><br>
                                 <input type="text" id="productPrice" name="productPrice"><br>
 
-                                <label for="quantity">FEED QUANTITY</label><br>
+                                <label for="quantity">MACHINERY QUANTITY</label><br>
                                 <input type="text" id="productQuantity" name="productQuantity"><br>
 
-                                <input type="hidden" id="productCategory" name="productCategory" value="Feeds">
+                                <input type="hidden" id="productCategory" name="productCategory" value="Machinery">
 
                                 <div class="button">
                                     <button type="submit">ADD PRODUCT</button>
@@ -79,29 +79,29 @@
                             <th>QUANTITY</th>
                             <th>ACTION</th>
                         </tr>
-                       <% Feeds.forEach((Feed)=>{ %>
+                       <% Machineries.forEach((Machinery)=>{ %>
                         <tr>
-                            <td><img src="data:image/png;base64,<%=Feed.productImage%>" alt=""></td>
-                            <td><%=Feed.productName %></td>
-                            <td><%=Feed.productPrice %></td>
-                            <td><%=Feed.productQuantity %></td>
+                            <td><img src="data:image/png;base64,<%=Machinery.productImage%>" alt=""></td>
+                            <td><%=Machinery.productName %></td>
+                            <td><%=Machinery.productPrice %></td>
+                            <td><%=Machinery.productQuantity %></td>
                             <td>
-                                <button onclick="showDetails('<%=Feed._id %>')">EDIT</button>
-                                <div class="productDetail" id="detail-<%=Feed._id %>">
+                                <button onclick="showDetails('<%=Machinery._id %>')">EDIT</button>
+                                <div class="productDetail" id="detail-<%=Machinery._id %>">
                                     <p><button id="close"><i class="fa-solid fa-x"></i></button></p>
                                     <div>
-                                        <form action="/feeds/<%=Feed._id %>/edit" method="post" enctype="multipart/form-data">
-                                            <label for="image">FEED IMAGE</label><br>
-                                            <input type="file" id="image" name="productImage" value="<%=Feed.productImage %>"><br>
+                                        <form action="/machineries/<%=Machinery._id %>/edit" method="post" enctype="multipart/form-data">
+                                            <label for="image">MACHINERY IMAGE</label><br>
+                                            <input type="file" id="image" name="productImage" value="<%=Machinery.productImage %>"><br>
         
-                                            <label for="name">FEED NAME</label><br>
-                                            <input type="text" id="name" name="productName" value="<%=Feed.productName %>"><br>
+                                            <label for="name">MACHINERY NAME</label><br>
+                                            <input type="text" id="name" name="productName" value="<%=Machinery.productName %>"><br>
         
-                                            <label for="price">FEED PRICE</label><br>
-                                            <input type="text" id="price" name="productPrice" value="<%=Feed.productPrice %>"><br>
+                                            <label for="price">MACHINERY PRICE</label><br>
+                                            <input type="text" id="price" name="productPrice" value="<%=Machinery.productPrice %>"><br>
         
-                                            <label for="quantity">FEED QUANTITY</label><br>
-                                            <input type="text" id="quantity" name="productQuantity" value="<%=Feed.productQuantity %>"><br>
+                                            <label for="quantity">MACHINERY QUANTITY</label><br>
+                                            <input type="text" id="quantity" name="productQuantity" value="<%=Machinery.productQuantity %>"><br>
 
 
                                             <div class="button">
@@ -110,7 +110,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <button onclick="confirmDeleteFeed('<%=Feed._id %>')">DELETE</button>
+                                <button onclick="confirmDeleteMachinery('<%=Machinery._id %>')">DELETE</button>
                             </td>
                         </tr>
                

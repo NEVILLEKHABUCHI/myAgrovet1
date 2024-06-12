@@ -205,16 +205,116 @@ function hideDetails(productId){
 }
 
 //Functions to delete a product in the adminFeeds page
-function confirmDelete(productId){
+function confirmDeleteFeed(productId){
     if(confirm('Are you sure you want to delete this product?')){
-        window.location.href='/products/'+productId+'/delete';
+        window.location.href='/feed/'+productId+'/delete';
     }
 }
-function hideDeletion(productId){
-    let deleteDiv=document.getElementById('delete-'+productId);
-    deleteDiv.style.display='none';
+
+
+// Functions for the adminDrugs page
+// Functions for showing the right1 tab on the adminFeeds page
+function showRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminDrugs_message=document.querySelector('.adminDrugs-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    adminDrugs_message.style.display="none";
 }
-function cancelDeletion(productId){
-    let deleteDiv=document.getElementById('delete-'+productId);
-    deleteDiv.style.display='none';
+function closeRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminDrugs_message=document.querySelector('.adminDrugs-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    adminDrugs_message.style.display="block";
 }
+
+//Functions for the add New Item on the admin Feeds page
+function showAddDrug(){
+    let adddrugDiv=document.querySelector('.addDrug');
+    if(adddrugDiv.style.display==='none' || adddrugDiv.style.display===''){
+        adddrugDiv.style.display='block';
+    }
+    else{
+        adddrugDiv.style.display='none';
+    }
+}
+function showDetails(productId){
+    let detailDiv=document.getElementById('detail-'+productId);
+    if(detailDiv.style.display==='none' || detailDiv.style.display===''){
+        detailDiv.style.display='block';
+    }
+    else{
+        detailDiv.style.display='none';
+    }
+}
+function hideDetails(productId){
+    let detailDiv=document.getElementById('detail-'+productId);
+    detailDiv.style.display='none';
+}
+
+//Functions to delete a product in the adminFeeds page
+function confirmDeleteDrug(productId){
+    if(confirm('Are you sure you want to delete this product?')){
+        window.location.href='/drug/'+productId+'/delete';
+    }
+}
+
+// Functions for the adminMachinery page
+// Functions for showing the right1 tab on the adminFeeds page
+function showadminMachineryRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminMachineries_message=document.querySelector('.adminMachineries-message');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+    adminMachineries_message.style.display="none";
+}
+function closeadminMachineryRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    let adminMachineries_message=document.querySelector('.adminMachineries-message');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+    adminMachineries_message.style.display="block";
+}
+
+//Functions for the add New Item on the admin Feeds page
+function showAddMachinery(){
+    let addmachineryDiv=document.querySelector('.addMachinery');
+    if(addmachineryDiv.style.display==='none' || addmachineryDiv.style.display===''){
+        addmachineryDiv.style.display='block';
+    }
+    else{
+        addmachineryDiv.style.display='none';
+    }
+}
+function showDetails(productId){
+    let detailDiv=document.getElementById('detail-'+productId);
+    if(detailDiv.style.display==='none' || detailDiv.style.display===''){
+        detailDiv.style.display='block';
+    }
+    else{
+        detailDiv.style.display='none';
+    }
+}
+function hideDetails(productId){
+    let detailDiv=document.getElementById('detail-'+productId);
+    detailDiv.style.display='none';
+}
+
+//Functions to delete a product in the adminFeeds page
+function confirmDeleteMachinery(productId){
+    if(confirm('Are you sure you want to delete this product?')){
+        window.location.href='/machinery/'+productId+'/delete';
+    }}

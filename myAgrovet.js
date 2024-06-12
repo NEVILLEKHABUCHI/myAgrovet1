@@ -229,7 +229,7 @@ const Product=mongoose.model('products',productSchema);
 app.get('/adminFeeds',async(req,res)=>{
     try{
            //Query the database to fetch product details
-           const products=await Product.find({});
+           const products=await Product.find({productCategory: 'Feeds'});
            res.render('adminFeeds',{title:'Admin Feeds',Feeds:products});
         }catch(error){
         console.error('Error fetching items from the database',error);
@@ -237,8 +237,8 @@ app.get('/adminFeeds',async(req,res)=>{
     }
 })
 
-//Posting the new added item from the adminFeeds form
-app.post('/addProduct',upload.single('productImage'),async(req,res)=>{
+//Posting the new added Feed from the adminFeeds form
+app.post('/addFeed',upload.single('productImage'),async(req,res)=>{
     try{
         const {productName,productPrice,productQuantity,productCategory}=req.body;
         const productImage=req.file.buffer.toString('base64');
@@ -268,8 +268,8 @@ app.post('/addProduct',upload.single('productImage'),async(req,res)=>{
     }
 });
 
-//Route to handle form submission of the editted product and update the product
-app.post('/products/:id/edit',upload.single('productImage'),async(req,res)=>{
+//Route to handle form submission of the editted product and update the product on the adminFeeds page
+app.post('/feeds/:id/edit',upload.single('productImage'),async(req,res)=>{
     const {productName,productPrice,productQuantity,productCategory}=req.body;
     const updateData={productName,productPrice,productQuantity,productCategory};
 
@@ -293,7 +293,7 @@ app.post('/products/:id/edit',upload.single('productImage'),async(req,res)=>{
 });
 
 // Route to handle product deletion
-app.get('/products/:id/delete',async(req,res)=>{
+app.get('/feed/:id/delete',async(req,res)=>{
     try{
         await Product.findByIdAndDelete(req.params.id);
         // Send success message
@@ -307,20 +307,160 @@ app.get('/products/:id/delete',async(req,res)=>{
     }
 })
 
-//Route to handle delete operation for a specific product
-// app.post('/deleteProduct',async(req,res)=>{
-//     try{
-//         const productId=req.body.productId;
-//         //Delete the product from the database using the product ID
-//         await Product.findByIdAndDelete(productId);
-//         //Send success message
-//         req.flash('success','Product Deleted successfully');
-//         //Redirect to the route that renders the adminFeeds page
-//         res.redirect('/adminFeeds');
-//     }catch(err){
-//         console.error('Error deleting product:',err);
-//         //Send error message
-//         req.flash('error','Failed to delete the product');
-//         res.redirect('/adminFeeds');
-//     }
-// })
+// Rendering the adminDrugs page
+app.get('/adminDrugs',async(req,res)=>{
+    try{
+        //Query the database to fetch drug details
+        const products=await Product.find({productCategory: 'Drugs'});
+        res.render('adminDrugs',{title:'Admin Drugs',Drugs:products});
+        }catch(error){
+         console.error('Error fetching Drugs from the database',error);
+            res.send('Something went wrong while opening the admin drugs page');
+        }
+});
+// Route to handle addDrug from the adminDrugs page
+app.post('/addDrug',upload.single('productImage'),async(req,res)=>{
+    try{
+        const {productName,productPrice,productQuantity,productCategory}=req.body;
+        const productImage=req.file.buffer.toString('base64');
+    
+        // Validate form inputs
+        if(!productImage||!productName||!productPrice||!productQuantity||!productCategory){
+            // Send error message
+            req.flash('error','Kindly fill all the fields');
+            return;
+        }
+        else{
+            const newProduct=new Product({
+                productImage,
+                productName,
+                productPrice,
+                productQuantity,
+                productCategory
+            });
+            await newProduct.save();
+            req.flash('success','Product added successfully');
+            res.redirect('/adminDrugs');
+        }
+    }catch(err){
+        console.error('Error while adding the product',err);
+        req.flash('error','Error while adding the product');
+        res.redirect('/adminDrugs');
+    }
+});
+//Route to handle form submission of the editted product and update the product on the adminDrugs page
+app.post('/drugs/:id/edit',upload.single('productImage'),async(req,res)=>{
+    const {productName,productPrice,productQuantity,productCategory}=req.body;
+    const updateData={productName,productPrice,productQuantity,productCategory};
+
+    if(req.file){
+        updateData.productImage=req.file.buffer.toString('base64');
+    }
+
+    try{
+        await Product.findByIdAndUpdate(req.params.id,updateData);
+        //Send success message
+        req.flash('success','Product updated Successfully');
+        //Redirect to the route that renders the adminFeeds page
+        res.redirect('/adminDrugs');
+    }
+    catch(err){
+        //Send error message
+        console.error(err);
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminDrugs');
+    }
+});
+// Route to handle drug deletion in the adminDrugs page
+app.get('/drug/:id/delete',async(req,res)=>{
+    try{
+        await Product.findByIdAndDelete(req.params.id);
+        // Send success message
+        req.flash('success','Product deleted Successfully');
+        res.redirect('/adminDrugs');
+    }
+    catch(err){
+        // Send error message
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminDrugs');
+    }
+})
+
+// Rendering the adminMachinery page
+app.get('/adminMachinery',async(req,res)=>{
+    try{
+        //Query the database to fetch drug details
+        const products=await Product.find({productCategory: 'Machinery'});
+        res.render('adminMachinery',{title:'Admin Machinery',Machineries:products});
+        }catch(error){
+         console.error('Error fetching Machineries from the database',error);
+            res.send('Something went wrong while opening the adminMachinery page');
+        }
+});
+// Route to handle addMachinery from the adminMachinery page
+app.post('/addMachinery',upload.single('productImage'),async(req,res)=>{
+    try{
+        const {productName,productPrice,productQuantity,productCategory}=req.body;
+        const productImage=req.file.buffer.toString('base64');
+    
+        // Validate form inputs
+        if(!productImage||!productName||!productPrice||!productQuantity||!productCategory){
+            // Send error message
+            req.flash('error','Kindly fill all the fields');
+            return;
+        }
+        else{
+            const newProduct=new Product({
+                productImage,
+                productName,
+                productPrice,
+                productQuantity,
+                productCategory
+            });
+            await newProduct.save();
+            req.flash('success','Product added successfully');
+            res.redirect('/adminMachinery');
+        }
+    }catch(err){
+        console.error('Error while adding the product',err);
+        req.flash('error','Error while adding the product');
+        res.redirect('/adminMachinery');
+    }
+});
+//Route to handle form submission of the editted product and update the product on the adminDrugs page
+app.post('/machineries/:id/edit',upload.single('productImage'),async(req,res)=>{
+    const {productName,productPrice,productQuantity,productCategory}=req.body;
+    const updateData={productName,productPrice,productQuantity,productCategory};
+
+    if(req.file){
+        updateData.productImage=req.file.buffer.toString('base64');
+    }
+
+    try{
+        await Product.findByIdAndUpdate(req.params.id,updateData);
+        //Send success message
+        req.flash('success','Product updated Successfully');
+        //Redirect to the route that renders the adminFeeds page
+        res.redirect('/adminMachinery');
+    }
+    catch(err){
+        //Send error message
+        console.error(err);
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminMachinery');
+    }
+});
+// Route to handle drug deletion in the adminDrugs page
+app.get('/machinery/:id/delete',async(req,res)=>{
+    try{
+        await Product.findByIdAndDelete(req.params.id);
+        // Send success message
+        req.flash('success','Product deleted Successfully');
+        res.redirect('/adminMachinery');
+    }
+    catch(err){
+        // Send error message
+        req.flash('error','Failed to update the product');
+        res.redirect('/adminMachinery');
+    }
+})

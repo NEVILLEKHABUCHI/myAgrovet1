@@ -376,6 +376,544 @@ body {
     border: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+/* Styling the  adminDrugs page */
+.adminDrugsContainer{
+    width: 99vw;
+    height: 99vh;
+}
+.adminDrugsContainer .top{
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.adminDrugsContainer .top a {
+    color: black;
+}
+.adminDrugsContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.adminDrugsContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.adminDrugsContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminDrugsContainer .top .right-1 a {
+    font-weight: bold;
+}
+.adminDrugsContainer .top .right-2{
+    display: none;
+}
+.adminDrugsContainer .body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: 79vh;
+}
+.adminDrugsContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+    background-image: url('/HomepageImages/Hare.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminDrugsContainer .body .body-top .adminDrugs-message{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    padding: 3px;
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.adminDrugsContainer .body .body-top .adminDrugs-message .alert {
+    display: flex;
+    justify-content: center;
+    animation: fadeOut 10s forwards;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminDrugsContainer .body .body-top .adminDrugs-message .alert-success{
+    color: #1F75FE;
+}
+.adminDrugsContainer .body .body-top .adminDrugs-message .alert-danger{
+    color: red;
+}
+.adminDrugsContainer .body .body-content .body-contentTop{
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminDrugsContainer .body .body-content .body-contentTop div{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+.adminDrugsContainer .body .body-content .body-contentTop div button{
+    border: none;
+    background-color: white;
+}
+.adminDrugsContainer .body .body-content .body-contentTop div h3 {
+    color: #228B22;
+    border: 1px solid #228B22;
+}
+.adminDrugsContainer .body .body-content .body-contentTop form input{
+    width: 30vw;
+    height: 5vh;
+    border: 1.5px solid #228B22;
+    border-radius: 5px;
+}
+.adminDrugsContainer .body .body-content .body-contentTop form button{
+    padding: 0.5vw;
+    border: none;
+    border-radius: 2px;
+    background-color: #228B22;
+    color: white;
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug{
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    /* text-align: start; */
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug #close{
+    background-color: rgb(0, 0, 0,85%);
+    color: white;
+    font-size: 1.5rem;
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug div {
+    width: inherit;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug div form {
+    width: 35vw;
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminDrugsContainer .body .body-content .body-contentTop .addDrug div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminDrugsContainer .body .body-content .body-contentBody{
+    padding-top: 1vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding-bottom: 4vh;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table{
+    border-collapse: collapse;
+    width: 80vw;
+    border: 1px solid #228B22;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table th,td{
+   border: 1px solid #228B22;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+    width: 15vw;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+    width: 30vw;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+    width: 10vw;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+    width: 10vw;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+    width: 15vw;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr td{
+    text-align: center;
+    padding: 0.5vw;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr td img {
+    width: 12vw;
+    height: 12vh;
+    object-fit: cover;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr td button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.2vw;
+    border: none;
+    color: white;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr td button:first-of-type{
+    background-color: #228B22;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table tr td button:nth-of-type(2){
+    background-color: red;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail {
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    text-align: start;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail #close{
+    background-color: rgb(0, 0, 0,85%);
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail p button{
+    font-size: 1.5rem;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail div form {
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminDrugsContainer .body .body-content .body-contentBody table .productDetail div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* Styling the adminMachinery page */
+.adminMachineriesContainer{
+    width: 99vw;
+    height: 99vh;
+}
+.adminMachineriesContainer .top{
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}
+.adminMachineriesContainer .top a {
+    color: black;
+}
+.adminMachineriesContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.adminMachineriesContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.adminMachineriesContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminMachineriesContainer .top .right-1 a {
+    font-weight: bold;
+}
+.adminMachineriesContainer .top .right-2{
+    display: none;
+}
+.adminMachineriesContainer .body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: 79vh;
+}
+.adminMachineriesContainer .body .body-top {
+    width: 99vw;
+    height: 50vh;  
+    background-image: url('/HomepageImages/Hare.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminMachineriesContainer .body .body-top .adminMachineries-message{
+    height: max-content;
+    background-color: rgb(255, 255, 255,70%);
+    padding: 3px;
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.adminMachineriesContainer .body .body-top .adminMachineries-message .alert {
+    display: flex;
+    justify-content: center;
+    animation: fadeOut 10s forwards;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminMachineriesContainer .body .body-top .adminMachineries-message .alert-success{
+    color: #1F75FE;
+}
+.adminMachineriesContainer .body .body-top .adminMachineries-message .alert-danger{
+    color: red;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop{
+    width: inherit;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop div{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop div button{
+    border: none;
+    background-color: white;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop div h3 {
+    color: #228B22;
+    border: 1px solid #228B22;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop form input{
+    width: 30vw;
+    height: 5vh;
+    border: 1.5px solid #228B22;
+    border-radius: 5px;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop form button{
+    padding: 0.5vw;
+    border: none;
+    border-radius: 2px;
+    background-color: #228B22;
+    color: white;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery{
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    /* text-align: start; */
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery #close{
+    background-color: rgb(0, 0, 0,85%);
+    color: white;
+    font-size: 1.5rem;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div {
+    width: inherit;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form {
+    width: 35vw;
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody{
+    padding-top: 1vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding-bottom: 4vh;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table{
+    border-collapse: collapse;
+    width: 80vw;
+    border: 1px solid #228B22;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table th,td{
+   border: 1px solid #228B22;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr th:first-of-type{
+    width: 15vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+    width: 30vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+    width: 10vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+    width: 10vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+    width: 15vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr td{
+    text-align: center;
+    padding: 0.5vw;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr td img {
+    width: 12vw;
+    height: 12vh;
+    object-fit: cover;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr td button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.2vw;
+    border: none;
+    color: white;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr td button:first-of-type{
+    background-color: #228B22;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table tr td button:nth-of-type(2){
+    background-color: red;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail {
+    width: 50vw;
+    height: max-content;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
+    background-color: rgb(0, 0, 0,85%);
+    display: none;
+    text-align: start;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail #close{
+    background-color: rgb(0, 0, 0,85%);
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail p button{
+    font-size: 1.5rem;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail div form {
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,70%);
+    box-shadow: 5px 5px 15px black;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail div form  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail div form  input {
+    width: 30vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    border: none;
+}
+.adminMachineriesContainer .body .body-content .body-contentBody table .productDetail div form .button button {
+    background-color: #03C03C;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 /* Media querying */
 @media only screen  and (max-width:900px) {
@@ -598,6 +1136,304 @@ body {
     }
   
     .adminFeedsContainer .body .body-content .body-contentTop .addFeed div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
+
+    /* Media querying the adminDrugs page */
+    .adminDrugsContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .adminDrugsContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .adminDrugsContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .adminDrugsContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .adminDrugsContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .adminDrugsContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .adminDrugsContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .adminDrugsContainer .body {
+        height: 89vh;
+    }
+    .adminDrugsContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .adminDrugsContainer .body .body-top div{
+        width: 55vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .adminDrugsContainer .body .body-content .body-contentTop{
+        margin-top: 2vh;
+        width: inherit;
+        height: 7vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentTop div{
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentTop form input{
+        width: 70vw;
+        height: 3vh;
+        border: 1.5px solid #228B22;
+        border-radius: 5px;
+    }
+    .adminDrugsContainer .body .body-content .body-contentTop form button{
+        padding: 0.5vw;
+        border: none;
+        border-radius: 2px;
+        background-color: #228B22;
+        color: white;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody{
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5vh;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table{
+        border-collapse: collapse;
+        width: 200vw;
+        border: 1px solid #228B22;
+        table-layout: fixed;
+        margin-left: 106vw;
+        margin-right: 2vw;
+        margin-bottom: 5vh;
+    }
+    th,td{
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid #228B22;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table tr th:first-of-type{
+        width: 35vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+        width: 75vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+        width: 30vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+        width: 30vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+        width: 30vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table tr td img {
+        width: 30vw;
+        height: 15vh;
+        object-fit: cover;
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table .productDetail {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+        
+    }
+    .adminDrugsContainer .body .body-content .body-contentBody table .productDetail div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
+    .adminDrugsContainer .body .body-content .body-contentTop .addDrug {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+    }
+    .adminDrugsContainer .body .body-content .body-contentTop .addDrug div form {
+        width: 80vw;
+     
+    }
+  
+    .adminDrugsContainer .body .body-content .body-contentTop .addDrug div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
+
+    /* Media querying the adminMachinery page */
+    .adminMachineriesContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .adminMachineriesContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .adminMachineriesContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+    }
+    .adminMachineriesContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .adminMachineriesContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .adminMachineriesContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .adminMachineriesContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .adminMachineriesContainer .body {
+        height: 89vh;
+    }
+    .adminMachineriesContainer .body .body-top {
+        width: 99vw;
+        height: 50vh;
+    }
+    .adminMachineriesContainer .body .body-top div{
+        width: 55vw;
+        padding: 3px;
+        text-align: center;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentTop{
+        margin-top: 2vh;
+        width: inherit;
+        height: 7vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentTop div{
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentTop form input{
+        width: 70vw;
+        height: 3vh;
+        border: 1.5px solid #228B22;
+        border-radius: 5px;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentTop form button{
+        padding: 0.5vw;
+        border: none;
+        border-radius: 2px;
+        background-color: #228B22;
+        color: white;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody{
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5vh;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table{
+        border-collapse: collapse;
+        width: 200vw;
+        border: 1px solid #228B22;
+        table-layout: fixed;
+        margin-left: 106vw;
+        margin-right: 2vw;
+        margin-bottom: 5vh;
+    }
+    th,td{
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid #228B22;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table tr th:first-of-type{
+        width: 35vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(2){
+        width: 75vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(3){
+        width: 30vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(4){
+        width: 30vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table tr th:nth-of-type(5){
+        width: 30vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table tr td img {
+        width: 30vw;
+        height: 15vh;
+        object-fit: cover;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table .productDetail {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+        
+    }
+    .adminMachineriesContainer .body .body-content .body-contentBody table .productDetail div form  input {
+        width: 70vw;
+        height: 4vh;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentTop .addMachinery {
+        width: 90vw;
+        height: max-content;
+        position: absolute;
+        top: 25vh;
+        left: 4vw;
+    }
+    .adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form {
+        width: 80vw;
+     
+    }
+  
+    .adminMachineriesContainer .body .body-content .body-contentTop .addMachinery div form  input {
         width: 70vw;
         height: 4vh;
     }
