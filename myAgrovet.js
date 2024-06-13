@@ -9,7 +9,7 @@ const path=require('path');
 const session=require('express-session');
 const flash=require('connect-flash');
 const RedisStore=require('connect-redis').default;
-const redis=require('ioredis');
+const redis=require('redis');
 
 dotenv.config({path:'./important.env'});
 
@@ -21,18 +21,29 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+// redis
 const redisClient=redis.createClient({
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT,
     password: process.env.REDIS_PASSWORD
-})
+});
+
+(async()=>{
+    await redisClient.connect();
+})();
+redisClient.on('connect',()=>{
+    console.log('redis client connected');
+});
+redisClient.on('error',(err)=>{
+    console.log('Could not connect redis',err);
+});
 
 //Setting up sessions middleware
 app.use(session({
     store: new RedisStore({client:redisClient}),
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
         secure: false,
         maxAge: 2*60*60*1000
