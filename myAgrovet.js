@@ -23,9 +23,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 // redis
 const redisClient=redis.createClient({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT,
-    password: process.env.REDIS_PASSWORD
+    password: 'elbFF5fG9zKquoGFWWH1wER5dTFeLxoN',
+    socket: {
+        host: 'redis-10278.c14.us-east-1-3.ec2.redns.redis-cloud.com',
+        port: 10278
+    }
 });
 
 (async()=>{
