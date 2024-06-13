@@ -66,6 +66,7 @@
     "iconv-lite": "^0.4.24",
     "ignore-by-default": "^1.0.1",
     "inherits": "^2.0.4",
+    "ioredis": "^5.4.1",
     "ipaddr.js": "^1.9.1",
     "is-binary-path": "^2.1.0",
     "is-extglob": "^2.1.1",

@@ -8,6 +8,8 @@ const multer=require('multer');
 const path=require('path');
 const session=require('express-session');
 const flash=require('connect-flash');
+const RedisStore=require('connect-redis').default;
+const redis=require('ioredis');
 
 dotenv.config({path:'./important.env'});
 
@@ -19,11 +21,22 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+const redisClient=redis.createClient({
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+    password: process.env.REDIS_PASSWORD
+})
+
 //Setting up sessions middleware
 app.use(session({
-    secret: 'Ni_Neville',
+    store: new RedisStore({client:redisClient}),
+    secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 2*60*60*1000
+    }
 }));
 //Setting up flash middleware
 app.use(flash());
@@ -173,6 +186,7 @@ app.post('/login',(req,res)=>{
        return;
     }
     if(username==='MOLLY'&&password==='NEVILLE'){
+        req.session.user=username;
         res.redirect('/admin');
     }
     else{
@@ -201,6 +215,7 @@ app.post('/login',(req,res)=>{
 //Rendering the admin page
 app.get('/admin',async(req,res)=>{
     // res.render('admin',{title:'Admin page'});
+    if(req.session.user){
     try{
         const productCounts=await Product.aggregate([
             {$group:{_id:'$productCategory',count:{$sum:1}}}
@@ -209,10 +224,13 @@ app.get('/admin',async(req,res)=>{
             acc[item._id]=item.count;
             return acc;
         },{});
+        
         res.render('admin',{title:'Admin page',categoryCounts});
     }catch(err){
         console.error(err);
         res.status(500).send('Server error');
+    }}else{
+        console.log('You must be logged in')
     }
 });
 //Product schema for the products collection in mongoDB
