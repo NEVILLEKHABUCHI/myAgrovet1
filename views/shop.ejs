@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/adminHeader.ejs') %>
+<body>
+    <div class="shopContainer">
+        <div class="top">
+            <div class="left">
+                <img src="/HomepageImages/Green Plant and Agriculture Logo.png" alt="">
+            </div>
+            <div class="right-1">
+                    <a href="">SHOP</a>
+                    <a href="">SERVICES</a>
+                    <a href="">HELP</a>
+                    <a href="">ACCOUNT</a>
+            </div>
+            <div class="right-2">
+                <button onclick="showShopRight1tab()" id="openTab"><i class="fa-solid fa-bars"></i></button>
+                <button onclick="closeShopRight1tab()" id="closeTab"><i class="fa-solid fa-x"></i></button>
+            </div>
+        </div>
+        <div class="top1">
+            <div class="content">
+                <div class="content_1">
+                    <form action="" method="">
+                        <input type="text" name="query" placeholder="Search for products">
+                        <button type="submit">Search</button>
+                    </form>
+                    <div class="cart">
+                       <a href="">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p>0</p>
+                       </a>
+                    </div>
+                </div>
+                <div class="content_2">
+                    <button>FEEDS</button>
+                    <button>DRUGS</button>
+                    <button>SEEDS</button>
+                    <button>MACHINERY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Vanilla.js"></script>
+</body>
+</html>

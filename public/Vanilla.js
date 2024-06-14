@@ -373,3 +373,22 @@ function confirmDeleteSeed(productId){
         window.location.href='/seed/'+productId+'/delete';
     }
 }
+
+// Functions for the shop page that is rendered after a user successfully signs up
+// Functions for showing the right1 tab on the adminFeeds page
+function showShopRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    right_1.style.display="flex";
+    openTab.style.display="none";
+    closeTab.style.display="block";
+}
+function closeShopRight1tab(){
+    let right_1=document.querySelector('.right-1');
+    let openTab=document.querySelector('#openTab');
+    let closeTab=document.querySelector('#closeTab');
+    right_1.style.display="none";
+    openTab.style.display="block";
+    closeTab.style.display="none";
+}

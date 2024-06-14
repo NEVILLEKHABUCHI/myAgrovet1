@@ -1185,6 +1185,121 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* Styling the shop container after a customer suceesfully logs in */
+.shopContainer{
+    width: 99vw;
+    height: 99vh;
+}
+.shopContainer .top{
+    width: inherit;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+    border-bottom: 1.5px solid #B2BEB5;
+}
+.shopContainer .top a {
+    color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
+}
+.shopContainer .top .left{
+    width: 18vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+.shopContainer .top .left img{
+    width: 18vw;
+    height: 18vh;
+    object-fit: cover;
+}
+.shopContainer .top .right-1{
+    width: 50vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shopContainer .top .right-1 a {
+    font-weight: bold;
+}
+.shopContainer .top .right-2{
+    display: none;
+}
+.shopContainer .top1{
+    width: inherit;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #03C03C;
+    background-color: #F5F5F5;
+}
+.shopContainer .top1 .content{
+    width: 80vw;
+    /* height: inherit; */
+}
+.shopContainer .top1 .content .content_1{
+    display: flex;
+    justify-content: space-between;
+}
+.shopContainer .top1 .content .content_1 form input{
+    width: 40vw;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+}
+.shopContainer .top1 .content .content_1 form button{
+    color: white;
+    background-color: #03C03C;
+    padding: 0.5vw;
+    border: none;
+    border-radius: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.shopContainer .top1 .content .content_1 .cart a{
+    /* width: max-content; */
+    display: flex;
+}
+.shopContainer .top1 .content .content_1 .cart {
+    display: flex;
+    align-items: center;
+}
+.shopContainer .top1 .content .content_1 .cart  i{
+    font-size: 1.5rem;
+    color: #03C03C;
+}
+.shopContainer .top1 .content .content_1 .cart p{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #03C03C;
+    color: #03C03C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shopContainer .top1 .content .content_2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh;
+}
+.shopContainer .top1 .content .content_2 button{
+    border: 1px solid #03C03C;
+    background-color: white;
+    padding: 0.2vw;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.shopContainer .body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: inherit;
+    height: 64vh;
+}
+
 /* Media querying */
 @media only screen  and (max-width:900px) {
     /* Media querying the adminContainer */
@@ -1855,5 +1970,62 @@ body {
     .adminSeedsContainer .body .body-content .body-contentTop .addSeed div form  input {
         width: 70vw;
         height: 4vh;
+    }
+    /* Media querying the shop Container */
+    .shopContainer .top {
+        width: inherit;
+        height: 10vh;
+    }
+    .shopContainer .top .left{
+        width: 30vw;
+        height: inherit;
+    }
+    .shopContainer .top .left img{
+        width: 30vw;
+        height: 10vh;
+        object-fit: cover;
+        border-bottom: 1.5px solid #B2BEB5;
+    }
+    .shopContainer .top .right-1{
+        width: 99vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between;s */
+        position: absolute;
+        top: 10.5vh;
+        background-color: rgb(255, 255, 255,70%);
+        display: none;
+    }
+    .shopContainer .top .right-2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .shopContainer .top .right-2 button{
+        font-size: 2rem;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+    .shopContainer .top .right-2 button:nth-of-type(2){
+        display: none;
+    }
+    .shopContainer .top1{
+        width: inherit;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #03C03C;
+        background-color: #F5F5F5;
+    }
+    .shopContainer .top1 .content{
+        width: 95vw;
+        /* height: inherit; */
+    }
+    .shopContainer .top1 .content .content_1 form input{
+        width: 55vw;
+        height: 3vh;
     }
 }

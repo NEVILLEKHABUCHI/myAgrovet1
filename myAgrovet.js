@@ -173,14 +173,15 @@ app.post('/signup',(req,res)=>{
                             console.log('Email sent: ',info.response);
                         }
                     });
-                    res.send('Sign up successfull');
+                    req.flash('success','Sign up successful');
+                    res.redirect('/login');
                 }
             })
         }
         else{
 
-            req.flash('error', 'Already registered');
-            res.redirect('/signup');
+            req.flash('error', 'Already registered,log in');
+            res.redirect('/login');
         }
     })
 })
@@ -214,7 +215,7 @@ app.post('/login',(req,res)=>{
             else{
                 if(result.length>0){
                     const user=result[0];
-                    res.send('Log in successful');
+                    res.redirect('/shop');
                 }
                 else{
                     req.flash('error','Invalid credentials')
@@ -225,6 +226,13 @@ app.post('/login',(req,res)=>{
         })
     }
 })
+
+// Rendering the shop page after a customer logs in successfully
+app.get('/shop',async(req,res)=>{
+    res.render('shop',{title: 'Nevoline Online Shop'});
+})
+
+
 //Rendering the admin page
 app.get('/admin',async(req,res)=>{
     // res.render('admin',{title:'Admin page'});
