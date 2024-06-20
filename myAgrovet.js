@@ -1,7 +1,7 @@
 const express=require('express');
-const mysql=require('mysql');
-const mongoose=require('mongoose');
-const dotenv=require('dotenv');
+const db=require('./models/mysql');
+const connectMongoDB=require('./models/mongodb');
+const Product=require('./models/product')
 const nodemailer=require('nodemailer');
 const bodyParser=require('body-parser');
 const multer=require('multer');
@@ -11,11 +11,12 @@ const flash=require('connect-flash');
 const RedisStore=require('connect-redis').default;
 const redis=require('redis');
 
-dotenv.config({path:'./important.env'});
+
 
 const app=express();
 app.set('view engine','ejs');
 app.use(express.static('public'));
+connectMongoDB();
 
 //Middleware for parsing URL-encoded form data
 app.use(bodyParser.json());
@@ -43,7 +44,7 @@ redisClient.on('error',(err)=>{
 //Setting up sessions middleware
 app.use(session({
     store: new RedisStore({client:redisClient}),
-    secret: process.env.SESSION_SECRET,
+    secret: 'Ni_Neville',
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -61,32 +62,12 @@ app.use((req,res,next)=>{
     next();
 })
 
-//Setting up MySQL connection
-const db=mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-    // port: process.env.PORT
-});
-//Connect to MySQL
-db.connect((error)=>{
-    if(error){
-        console.log('Error connecting to the database',error);
-        return;
-    }else{
-        console.log('Mysql connected successfully');
-        app.listen(3000,()=>{
-            console.log("Server running on port 3000");
-        })
-    }
-});
-//Connecting to MongoDB
-const dbUrl='mongodb+srv://Nevoline_agrovet:Khabuchi@cluster0.3wznhua.mongodb.net/Nevoline_Agrovet?retryWrites=true&w=majority&appName=Cluster0';
-
-mongoose.connect(dbUrl).then(()=>{
-    console.log('Connected to mongodb successfully');
+// Listening on port 3000
+app.listen(3000,()=>{
+    console.log('Server running on port 3000');
+    
 })
+
 //Multer configuration for handling file uploads
 const storage=multer.memoryStorage();
 const upload=multer({storage:storage});
@@ -264,15 +245,6 @@ app.get('/admin',async(req,res)=>{
         console.log('You must be logged in')
     }
 });
-//Product schema for the products collection in mongoDB
-const productSchema=new mongoose.Schema({
-    productImage:String,
-    productName:String,
-    productPrice:Number,
-    productQuantity:Number,
-    productCategory:String//Store image data as Base64 string
-});
-const Product=mongoose.model('products',productSchema);
 
 //Rendering the adminFeeds page which entails getting items from mongodb database
 app.get('/adminFeeds',async(req,res)=>{
