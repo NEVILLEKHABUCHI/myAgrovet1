@@ -2076,7 +2076,7 @@ body {
         display: flex;
         justify-content: center;
         padding-top: 2vh;
-        padding-bottom: 5vh;
+        padding-bottom: 10vh;
     }
     .shopContainer .body .content {
         width: 90vw;
