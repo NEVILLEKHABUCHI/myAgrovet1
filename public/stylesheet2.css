@@ -1298,6 +1298,46 @@ body {
     overflow-x: hidden;
     width: inherit;
     height: 64vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 2vh;
+}
+.shopContainer .body .content {
+    width: 90vw;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(5,15vw);
+    gap: 3.7vw;
+}
+.shopContainer .body .content .Feed{
+    width: 15vw;
+    height: max-content;
+    padding: 1vw;
+    border: 1px solid #B2BEB5;
+    border-radius: 10px;
+}
+.shopContainer .body .content .Feed img{
+    width: 13vw;
+    height: 20vh;
+    object-fit: cover;
+}
+.shopContainer .body .content .Feed p:first-of-type{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.shopContainer .body .content .Feed p:nth-of-type(2){
+    font-family: cursive;
+}
+.shopContainer .body .content .Feed p:last-of-type{
+    display: flex;
+    justify-content: center;
+}
+.shopContainer .body .content .Feed p:last-of-type button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Media querying */
@@ -2027,5 +2067,29 @@ body {
     .shopContainer .top1 .content .content_1 form input{
         width: 55vw;
         height: 3vh;
+    }
+    .shopContainer .body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: inherit;
+        height: 79vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 2vh;
+    }
+    .shopContainer .body .content {
+        width: 90vw;
+        height: max-content;
+        display: grid;
+        grid-template-columns: repeat(2,45vw);
+        gap: 3.7vw;
+    }
+    .shopContainer .body .content .Feed{
+        width: 40vw;
+        height: max-content;
+    }
+    .shopContainer .body .content .Feed img{
+        width: 38vw;
+        height: 20vh;
     }
 }

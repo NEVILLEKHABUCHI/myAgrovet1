@@ -229,7 +229,17 @@ app.post('/login',(req,res)=>{
 
 // Rendering the shop page after a customer logs in successfully
 app.get('/shop',async(req,res)=>{
-    res.render('shop',{title: 'Nevoline Online Shop'});
+    try{
+        // Query the database to fetch product details
+        const productFeeds=await Product.find({productCategory:'Feeds'});
+        const productDrugs=await Product.find({productCategory:'Drugs'});
+        const productSeeds=await Product.find({productCategory:'Seeds'});
+        res.render('shop',{title: 'Nevoline Online Shop',Feeds:productFeeds,Drugs:productDrugs,Seeds:productSeeds});
+    }
+    catch(err){
+        console.error('Error fetching details from the database',err);
+        res.send(err);
+    }
 })
 
 

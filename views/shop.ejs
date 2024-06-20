@@ -40,6 +40,18 @@
                 </div>
             </div>
         </div>
+        <div class="body">
+            <div class="content">
+                <% Feeds.forEach((Feed)=>{ %>
+                    <div class="Feed">
+                        <img src="data:image/png;base64,<%=Feed.productImage%>" alt="No image">
+                        <p><%=Feed.productName %></p>
+                        <p>Kshs. <%=Feed.productPrice %></p>
+                        <p><button>ADD TO CART</button></p>
+                    </div>
+                    <%}) %>
+            </div>
+        </div>
     </div>
     <script src="Vanilla.js"></script>
 </body>
