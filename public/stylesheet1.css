@@ -24,6 +24,8 @@ body {
 }
 .homeContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .homeContainer .top .left{
     width: 18vw;
@@ -198,6 +200,8 @@ body {
 }
 .aboutContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .aboutContainer .top .left{
     width: 18vw;
@@ -321,6 +325,8 @@ body {
 }
 .servicesContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .servicesContainer .top .left{
     width: 18vw;
@@ -411,6 +417,8 @@ body {
 }
 .productsContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .productsContainer .top .left{
     width: 18vw;
@@ -513,6 +521,8 @@ body {
 }
 .signupContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .signupContainer .top .left{
     width: 18vw;
@@ -641,6 +651,8 @@ body {
 }
 .loginContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .loginContainer .top .left{
     width: 18vw;

@@ -24,6 +24,8 @@ body {
 }
 .adminContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .adminContainer .top .left{
     width: 18vw;
@@ -121,6 +123,8 @@ body {
 }
 .adminFeedsContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .adminFeedsContainer .top .left{
     width: 18vw;
@@ -390,6 +394,8 @@ body {
 }
 .adminDrugsContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .adminDrugsContainer .top .left{
     width: 18vw;
@@ -659,6 +665,8 @@ body {
 }
 .adminMachineriesContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .adminMachineriesContainer .top .left{
     width: 18vw;
@@ -929,6 +937,8 @@ body {
 }
 .adminSeedsContainer .top a {
     color: black;
+    border: 1px solid #B2BEB5;
+    padding: 2px;
 }
 .adminSeedsContainer .top .left{
     width: 18vw;
@@ -1299,8 +1309,10 @@ body {
     width: inherit;
     height: 64vh;
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
     padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 .shopContainer .body .content {
     width: 90vw;

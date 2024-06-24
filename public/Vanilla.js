@@ -392,3 +392,29 @@ function closeShopRight1tab(){
     openTab.style.display="block";
     closeTab.style.display="none";
 }
+
+// Functions for handling the navigation tabs
+function showFeeds(){
+    let feeds=document.querySelector('.Feed');
+    feeds.style.display="block";
+}
+// Handling the "Add to Cart" functionality
+$(document).ready(function(){
+    $('.add-to-cart').click(function(){
+        const productId=$(this).data('product-id');
+
+        $.ajax({
+            url: '/add-to-cart',
+            method: 'POST',
+            data: {productId: productId},
+            success: function(response){
+                if(response.success){
+                    const cartCount=parseInt($('#cart-count').text());
+                    $('#cart-count').text(cartCount+1);
+                }else{
+                    alert('Error adding to cart');
+                }
+            }
+        })
+    })
+})

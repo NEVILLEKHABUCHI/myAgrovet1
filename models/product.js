@@ -9,7 +9,18 @@ const productSchema=new mongoose.Schema({
     productCategory:String//Store image data as Base64 string
 });
 
-const Product=mongoose.model('products',productSchema);
+// Cart schema for handling the cart
+const cartSchema=new mongoose.Schema({
+    userId: String,
+    products: [{
+        productImage: String,
+        productName: String,
+        productPrice: Number
+    }]
+})
 
-module.exports=Product;
+const Product=mongoose.model('products',productSchema);
+const Cart=mongoose.model('Cart',cartSchema);
+
+module.exports={Product,Cart};
 

@@ -28,26 +28,26 @@
                     <div class="cart">
                        <a href="">
                         <i class="fa-solid fa-bag-shopping"></i>
-                        <p>0</p>
+                        <p id="cart-count"><%=cartItemCount %></p>
                        </a>
                     </div>
                 </div>
                 <div class="content_2">
-                    <button>FEEDS</button>
-                    <button>DRUGS</button>
-                    <button>SEEDS</button>
-                    <button>MACHINERY</button>
+                    <button onclick="showFeeds()">FEEDS</button>
+                    <button onclick="showDrugs()">DRUGS</button>
+                    <button onclick="showSeeds()">SEEDS</button>
+                    <button onclick="showMachinery()">MACHINERY</button>
                 </div>
             </div>
         </div>
         <div class="body">
-            <div class="content">
+            <div class="content myFeeds">
                 <% Feeds.forEach((Feed)=>{ %>
                     <div class="Feed">
                         <img src="data:image/png;base64,<%=Feed.productImage%>" alt="No image">
                         <p><%=Feed.productName %></p>
                         <p>Kshs. <%=Feed.productPrice %></p>
-                        <p><button>ADD TO CART</button></p>
+                        <p><button class="add-to-cart" data-product-id="<%=Feed._id %>" onclick="addToCart('<%=Feed._id %>')">ADD TO CART</button></p>
                     </div>
                     <%}) %>
             </div>

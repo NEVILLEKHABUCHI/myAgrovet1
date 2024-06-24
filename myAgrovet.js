@@ -1,7 +1,7 @@
 const express=require('express');
 const db=require('./models/mysql');
 const connectMongoDB=require('./models/mongodb');
-const Product=require('./models/product')
+const {Product,Cart}=require('./models/product')
 const nodemailer=require('nodemailer');
 const bodyParser=require('body-parser');
 const multer=require('multer');
@@ -46,12 +46,22 @@ app.use(session({
     store: new RedisStore({client:redisClient}),
     secret: 'Ni_Neville',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
         secure: false,
         maxAge: 2*60*60*1000
     }
 }));
+// Middleware to check user session
+function ensureLoggedIn(req,res,next){
+    if(req.session.userId){
+        next();
+    }else{
+        // Send error message
+        req.flash('error','Kindly log in to proceed');
+        res.redirect('/login'); //Redirect to log in if not logged in
+    }
+}
 //Setting up flash middleware
 app.use(flash());
 
@@ -82,6 +92,7 @@ const transporter=nodemailer.createTransport({
         pass: 'dgem nunl zzzp egda'//App password from gmail account
     }
 });
+
 //Rendering the home page
 app.get('/',(req,res)=>{
     res.render('main',{title:'Nevoline Agrovet'})
@@ -187,7 +198,7 @@ app.post('/login',(req,res)=>{
     else{
         //Check if the provided credentials match any regular user
         //Query to check whether the user details match with the registered details
-        const query=`SELECT * FROM signup WHERE USERNAME=? AND PASSWORD=?`;
+        const query=`SELECT USER_ID FROM signup WHERE USERNAME=? AND PASSWORD=?`;
         db.query(query,[username,password],(error,result)=>{
             if(error){
                 console.log('Cannot fetch details from the database',error);
@@ -195,7 +206,8 @@ app.post('/login',(req,res)=>{
             }
             else{
                 if(result.length>0){
-                    const user=result[0];
+                    // const user=result[0];
+                    req.session.userId=result[0].USER_ID;
                     res.redirect('/shop');
                 }
                 else{
@@ -207,15 +219,19 @@ app.post('/login',(req,res)=>{
         })
     }
 })
-
 // Rendering the shop page after a customer logs in successfully
-app.get('/shop',async(req,res)=>{
+app.get('/shop',ensureLoggedIn, async(req,res)=>{
     try{
         // Query the database to fetch product details
         const productFeeds=await Product.find({productCategory:'Feeds'});
         const productDrugs=await Product.find({productCategory:'Drugs'});
         const productSeeds=await Product.find({productCategory:'Seeds'});
-        res.render('shop',{title: 'Nevoline Online Shop',Feeds:productFeeds,Drugs:productDrugs,Seeds:productSeeds});
+
+        const userId=req.session.userId;
+        const cart=await Cart.findOne({userId:userId}).populate('products').exec();
+        const cartItemCount=cart ? cart.products.length : 0;
+        
+            res.render('shop',{title: 'Nevoline Online Shop',Feeds:productFeeds,Drugs:productDrugs,Seeds:productSeeds,cartItemCount: cartItemCount,userId: userId});
     }
     catch(err){
         console.error('Error fetching details from the database',err);
@@ -223,6 +239,31 @@ app.get('/shop',async(req,res)=>{
     }
 })
 
+// Handling the route to add a product to cart
+app.post('/add-to-cart',ensureLoggedIn,async(req,res)=>{
+    const userId=req.session.userId;
+    const {productId}=req.body;
+
+    try{
+        const product=await Product.findById(productId);
+        let cart=await Cart.findOne({userId});
+
+        if(cart){
+            cart.products.push(product);
+        }else{
+            cart=new Cart({
+                userId: userId,
+                products: [product]
+            });
+        }
+
+        await cart.save();
+        res.send({success: true});
+    }catch(err){
+        console.error('Error adding to cart',err);
+    }
+
+})
 
 //Rendering the admin page
 app.get('/admin',async(req,res)=>{
