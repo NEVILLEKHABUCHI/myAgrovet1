@@ -1314,36 +1314,38 @@ body {
     padding-top: 2vh;
     padding-bottom: 2vh;
 }
-.shopContainer .body .content {
+.shopContainer .body .feedsDiv {
     width: 90vw;
     height: max-content;
-    display: grid;
-    grid-template-columns: repeat(5,15vw);
+    /* display: grid;
+    grid-template-columns: repeat(5,15vw); */
+    display: flex;
+    flex-wrap: wrap;
     gap: 3.7vw;
 }
-.shopContainer .body .content .Feed{
+.shopContainer .body .feedsDiv .Feed{
     width: 15vw;
     height: max-content;
     padding: 1vw;
     border: 1px solid #B2BEB5;
     border-radius: 10px;
 }
-.shopContainer .body .content .Feed img{
+.shopContainer .body .feedsDiv .Feed img{
     width: 13vw;
     height: 20vh;
     object-fit: cover;
 }
-.shopContainer .body .content .Feed p:first-of-type{
+.shopContainer .body .feedsDiv .Feed p:first-of-type{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.shopContainer .body .content .Feed p:nth-of-type(2){
+.shopContainer .body .feedsDiv .Feed p:nth-of-type(2){
     font-family: cursive;
 }
-.shopContainer .body .content .Feed p:last-of-type{
+.shopContainer .body .feedsDiv .Feed p:last-of-type{
     display: flex;
     justify-content: center;
 }
-.shopContainer .body .content .Feed p:last-of-type button{
+.shopContainer .body .feedsDiv .Feed p:last-of-type button{
     background-color: #03C03C;
     color: white;
     border: none;
@@ -1352,6 +1354,85 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Styling the drugsDiv */
+.shopContainer .body .drugsDiv {
+    width: 90vw;
+    height: max-content;
+    /* display: grid; */
+    /* grid-template-columns: repeat(5,15vw); */
+    gap: 3.7vw;
+    display: none;
+}
+.shopContainer .body .drugsDiv .Drug{
+    width: 15vw;
+    height: max-content;
+    padding: 1vw;
+    border: 1px solid #B2BEB5;
+    border-radius: 10px;
+}
+.shopContainer .body .drugsDiv .Drug img{
+    width: 13vw;
+    height: 20vh;
+    object-fit: cover;
+}
+.shopContainer .body .drugsDiv .Drug p:first-of-type{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.shopContainer .body .drugsDiv .Drug p:nth-of-type(2){
+    font-family: cursive;
+}
+.shopContainer .body .drugsDiv .Drug p:last-of-type{
+    display: flex;
+    justify-content: center;
+}
+.shopContainer .body .drugsDiv .Drug p:last-of-type button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling the seedsDiv */
+.shopContainer .body .seedsDiv {
+    width: 90vw;
+    height: max-content;
+    /* display: grid; */
+    /* grid-template-columns: repeat(5,15vw); */
+    gap: 3.7vw;
+    display: none;
+}
+.shopContainer .body .seedsDiv .Seed{
+    width: 15vw;
+    height: max-content;
+    padding: 1vw;
+    border: 1px solid #B2BEB5;
+    border-radius: 10px;
+}
+.shopContainer .body .seedsDiv .Seed img{
+    width: 13vw;
+    height: 20vh;
+    object-fit: cover;
+}
+.shopContainer .body .seedsDiv .Seed p:first-of-type{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.shopContainer .body .seedsDiv .Seed p:nth-of-type(2){
+    font-family: cursive;
+}
+.shopContainer .body .seedsDiv .Seed p:last-of-type{
+    display: flex;
+    justify-content: center;
+}
+.shopContainer .body .seedsDiv .Seed p:last-of-type button{
+    background-color: #03C03C;
+    color: white;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /* Media querying */
 @media only screen  and (max-width:900px) {
     /* Media querying the adminContainer */

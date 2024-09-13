@@ -395,8 +395,30 @@ function closeShopRight1tab(){
 
 // Functions for handling the navigation tabs
 function showFeeds(){
-    let feeds=document.querySelector('.Feed');
-    feeds.style.display="block";
+    let feedsDiv=document.querySelector('.feedsDiv');
+    let drugsDiv=document.querySelector('.drugsDiv');
+    let seedsDiv=document.querySelector('.seedsDiv');
+    feedsDiv.style.display="flex";
+    drugsDiv.style.display="none";
+    seedsDiv.style.display="none";
+}
+
+function showDrugs(){
+    let feedsDiv=document.querySelector('.feedsDiv');
+    let drugsDiv=document.querySelector('.drugsDiv');
+    let seedsDiv=document.querySelector('.seedsDiv');
+    drugsDiv.style.display="flex";
+    feedsDiv.style.display="none";
+    seedsDiv.style.display="none";
+}
+
+function showSeeds(){
+    let feedsDiv=document.querySelector('.feedsDiv');
+    let drugsDiv=document.querySelector('.drugsDiv');
+    let seedsDiv=document.querySelector('.seedsDiv');
+    seedsDiv.style.display="flex";
+    feedsDiv.style.display="none";
+    drugsDiv.style.display="none";
 }
 // Handling the "Add to Cart" functionality
 $(document).ready(function(){
